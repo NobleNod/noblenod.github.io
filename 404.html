@@ -5,14 +5,14 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-		<link rel="icon" href="./favicon.png" />
+		<link rel="icon" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
-		<link rel="modulepreload" href="./_app/immutable/entry/start.CHvu0F3A.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/entry.C77uG62B.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.CK8c6Y9C.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.BwODg8xf.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.xXVwpfiD.js">
+		<link rel="modulepreload" href="/_app/immutable/entry/start.CHvu0F3A.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/entry.C77uG62B.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/scheduler.CK8c6Y9C.js">
+		<link rel="modulepreload" href="/_app/immutable/entry/app.BwODg8xf.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/index.xXVwpfiD.js">
 		<style>
 			html,body {
 				min-width:360px;
@@ -24,14 +24,14 @@
 			<script>
 				{
 					__sveltekit_w6xf1y = {
-						base: new URL(".", location).pathname.slice(0, -1)
+						base: ""
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("./_app/immutable/entry/start.CHvu0F3A.js"),
-						import("./_app/immutable/entry/app.BwODg8xf.js")
+						import("/_app/immutable/entry/start.CHvu0F3A.js"),
+						import("/_app/immutable/entry/app.BwODg8xf.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element);
 					});
