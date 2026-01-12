@@ -3,11 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Let's Talk | Hariharan R</title>
+    <title>Prove Yourself | IndustryReady Challenge</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-dark: #0a0a1a;
+            --bg-gradient-1: #1a1a3e;
+            --bg-gradient-2: #0f0f2d;
+            --text-white: #ffffff;
+            --text-gray: #a1a1aa;
+            --text-light: #e4e4e7;
+            --accent-orange: #f97316;
+            --accent-cyan: #06b6d4;
+            --accent-purple: #a855f7;
+            --accent-green: #22c55e;
+            --accent-red: #ef4444;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -16,135 +32,799 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            background: var(--bg-dark);
+            color: var(--text-white);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated gradient background */
+        .bg-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-gradient-1) 50%, var(--bg-gradient-2) 100%);
+            overflow: hidden;
+        }
+
+        .gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.25;
+            animation: float 25s ease-in-out infinite;
+        }
+
+        .orb-1 {
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
+            top: -200px;
+            right: -150px;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-red));
+            bottom: -150px;
+            left: -150px;
+            animation-delay: -5s;
+            opacity: 0.2;
+        }
+
+        .orb-3 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
+            top: 50%;
+            left: 40%;
+            animation-delay: -10s;
+            opacity: 0.15;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.05); }
+            50% { transform: translate(-20px, 20px) scale(0.95); }
+            75% { transform: translate(20px, 30px) scale(1.02); }
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
-            color: #f1f5f9;
+            position: relative;
+            padding: 2rem 0;
         }
 
-        .container {
-            max-width: 480px;
-            text-align: center;
+        @media (max-width: 700px) {
+            .hero {
+                min-height: 100vh;
+                padding: 2rem 0;
+            }
         }
 
-        .emoji {
-            font-size: 48px;
-            margin-bottom: 24px;
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-gray);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            animation: fadeIn 1s ease-out 0.5s both;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 24px;
-            background: linear-gradient(135deg, #a78bfa 0%, #818cf8 50%, #6366f1 100%);
+        .scroll-indicator span {
+            opacity: 0.7;
+        }
+
+        .scroll-arrow {
+            width: 24px;
+            height: 24px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            color: var(--text-light);
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.6rem 1.25rem;
+            border-radius: 100px;
+            margin-bottom: 2rem;
+        }
+
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .headline {
+            font-size: clamp(1.75rem, 5.5vw, 3.25rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, var(--text-white) 0%, var(--text-gray) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .description {
-            font-size: 1.125rem;
-            line-height: 1.7;
-            color: #cbd5e1;
-            margin-bottom: 32px;
+        .subhead {
+            font-size: clamp(1rem, 2.5vw, 1.35rem);
+            color: var(--text-gray);
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto 2rem;
         }
 
-        .highlight {
-            color: #ffffff;
-            font-weight: 500;
+        .subhead strong {
+            color: var(--accent-orange);
+            font-weight: 600;
         }
 
-        .credibility {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: linear-gradient(135deg, var(--accent-orange) 0%, #ea580c 100%);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 1rem 2rem;
             border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 32px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 24px rgba(249, 115, 22, 0.4);
         }
 
-        .credibility p {
-            font-size: 1rem;
-            color: #94a3b8;
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(249, 115, 22, 0.5);
+        }
+
+        .hero-cta svg {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.2s ease;
+        }
+
+        .hero-cta:hover svg {
+            transform: translateX(4px);
+        }
+
+        .hero-note {
+            margin-top: 1.25rem;
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            font-style: italic;
+        }
+
+        /* Section styling */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .section-label.problem {
+            color: var(--accent-red);
+        }
+
+        .section-label.solution {
+            color: var(--accent-green);
+        }
+
+        .section-title {
+            font-size: clamp(1.5rem, 4vw, 2.25rem);
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        /* Glass Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+
+        @media (max-width: 700px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .card-icon svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .glass-card.problem .card-icon {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--accent-red);
+        }
+
+        .glass-card.solution .card-icon {
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--accent-green);
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-white);
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-gray);
             line-height: 1.6;
         }
 
-        .credibility strong {
-            color: #ffffff;
+        /* Divider Arrow */
+        .divider {
+            text-align: center;
+            padding: 2rem 0;
         }
 
-        .whatsapp-btn {
+        .divider-arrow {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 1.125rem;
-            font-weight: 600;
-            padding: 16px 32px;
-            border-radius: 50px;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            color: var(--accent-orange);
+            animation: bounce 2s ease-in-out infinite;
         }
 
-        .whatsapp-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-        }
-
-        .whatsapp-btn svg {
+        .divider-arrow svg {
             width: 24px;
             height: 24px;
-            fill: currentColor;
         }
 
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(6px); }
+        }
+
+        /* Guarantee Section */
+        .guarantee {
+            background: linear-gradient(135deg, var(--accent-orange) 0%, #ea580c 50%, #dc2626 100%);
+            border-radius: 24px;
+            padding: 3.5rem 2.5rem;
+            text-align: center;
+            margin: 2rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .guarantee::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            filter: blur(40px);
+        }
+
+        .guarantee-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .guarantee-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            margin: 0 auto 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .guarantee-icon svg {
+            width: 32px;
+            height: 32px;
+            color: white;
+        }
+
+        .guarantee-text {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .guarantee-subtext {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+        }
+
+        /* Who Section */
+        .who-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        @media (max-width: 650px) {
+            .who-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .who-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 1.75rem;
+        }
+
+        .who-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .who-card h3 span {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+        }
+
+        .who-card.for-you h3 {
+            color: var(--accent-green);
+        }
+
+        .who-card.for-you h3 span {
+            background: rgba(34, 197, 94, 0.2);
+        }
+
+        .who-card.not-for-you h3 {
+            color: var(--text-gray);
+        }
+
+        .who-card.not-for-you h3 span {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .who-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 3rem 0 5rem;
+        }
+
+        .event-tags {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .event-tag {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 100px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .event-tag svg {
+            width: 16px;
+            height: 16px;
+            color: var(--accent-orange);
+        }
+
+        .event-tag.price-tag {
+            background: rgba(249, 115, 22, 0.15);
+            border-color: rgba(249, 115, 22, 0.3);
+            color: var(--accent-orange);
+            font-weight: 600;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: linear-gradient(135deg, var(--accent-orange) 0%, #ea580c 100%);
+            color: white;
+            font-size: 1.15rem;
+            font-weight: 600;
+            padding: 1.15rem 2.5rem;
+            border-radius: 14px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 24px rgba(249, 115, 22, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 36px rgba(249, 115, 22, 0.5);
+        }
+
+        .cta-button svg {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.2s ease;
+        }
+
+        .cta-button:hover svg {
+            transform: translateX(4px);
+        }
+
+        .limited-text {
+            margin-top: 1.25rem;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .limited-text strong {
+            color: var(--text-light);
+        }
+
+        /* Footer */
         .footer {
-            margin-top: 48px;
-            font-size: 0.875rem;
-            color: #475569;
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-gray);
+            font-size: 0.85rem;
         }
 
         .footer a {
-            color: #64748b;
+            color: var(--accent-orange);
             text-decoration: none;
         }
 
-        .footer a:hover {
-            color: #94a3b8;
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
+        .hero .badge,
+        .hero .headline,
+        .hero .subhead,
+        .hero .hero-cta {
+            animation: fadeUp 0.7s ease-out both;
+        }
+
+        .hero .headline { animation-delay: 0.1s; }
+        .hero .subhead { animation-delay: 0.2s; }
+        .hero .hero-cta { animation-delay: 0.3s; }
+
+        .glass-card {
+            animation: fadeUp 0.6s ease-out both;
+        }
+
+        .problem-section .glass-card:nth-child(1) { animation-delay: 0.1s; }
+        .problem-section .glass-card:nth-child(2) { animation-delay: 0.15s; }
+        .problem-section .glass-card:nth-child(3) { animation-delay: 0.2s; }
+        .problem-section .glass-card:nth-child(4) { animation-delay: 0.25s; }
+
+        .solution-section .glass-card:nth-child(1) { animation-delay: 0.35s; }
+        .solution-section .glass-card:nth-child(2) { animation-delay: 0.4s; }
+        .solution-section .glass-card:nth-child(3) { animation-delay: 0.45s; }
+        .solution-section .glass-card:nth-child(4) { animation-delay: 0.5s; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="emoji">💬</div>
-        <h1>Let's Talk</h1>
-        
-        <p class="description">
-            Preparing for placements? Wondering what interviewers <span class="highlight">actually</span> look for?
-        </p>
+    <div class="bg-wrapper">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
 
-        <div class="credibility">
-            <p>
-                I've conducted <strong>100+ technical interviews at Amazon</strong>. I know what gets candidates hired — and what gets them rejected in the first 10 minutes.
-            </p>
+    <section class="hero">
+        <div class="container">
+            <h1 class="headline">Why aren't you getting shortlisted when less skilled people are?</h1>
+            <p class="subhead">Prove you belong in the top 3. <strong>We'll get you the interview.</strong></p>
+            <a href="https://rzp.io/rzp/C8JpxIr" class="hero-cta">
+                Register for ₹499
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </a>
+            <p class="hero-note">If you're not willing to bet ₹499 on yourself, this isn't for you.</p>
         </div>
-
-        <a href="https://wa.me/16177495635?text=Hi%20Hari%2C%20I%20found%20you%20on%20LinkedIn%20and%20wanted%20to%20chat%20about%20placements" 
-           class="whatsapp-btn" 
-           target="_blank" 
-           rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <svg class="scroll-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
-            Message me on WhatsApp
-        </a>
-
-        <div class="footer">
-            <a href="https://www.linkedin.com/in/noblenod" target="_blank">LinkedIn</a>
         </div>
+    </section>
+
+    <div class="container">
+        <section class="section problem-section">
+            <div class="section-label problem">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                The Problem
+            </div>
+            <h2 class="section-title">What you're facing right now</h2>
+            <div class="cards-grid">
+                <div class="glass-card problem">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                        </svg>
+                    </div>
+                    <div class="card-title">Cheaters get ahead</div>
+                    <p class="card-desc">They share answers, use ChatGPT, and get shortlisted while you play fair.</p>
+                </div>
+                <div class="glass-card problem">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+                        </svg>
+                    </div>
+                    <div class="card-title">AI filters you out</div>
+                    <p class="card-desc">Algorithms reject you before any human sees your code or potential.</p>
+                </div>
+                <div class="glass-card problem">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                        </svg>
+                    </div>
+                    <div class="card-title">College name bias</div>
+                    <p class="card-desc">Your skills don't matter when your college name gets filtered first.</p>
+                </div>
+                <div class="glass-card problem">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
+                        </svg>
+                    </div>
+                    <div class="card-title">Zero feedback</div>
+                    <p class="card-desc">You get rejected. No one tells you why. You're left guessing.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider">
+            <div class="divider-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </div>
+        </div>
+
+        <section class="section solution-section">
+            <div class="section-label solution">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                The Solution
+            </div>
+            <h2 class="section-title">How this challenge is different</h2>
+            <div class="cards-grid">
+                <div class="glass-card solution">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                        </svg>
+                    </div>
+                    <div class="card-title">In-person proctored</div>
+                    <p class="card-desc">Everyone in the same room, same time. No cheating possible.</p>
+                </div>
+                <div class="glass-card solution">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <div class="card-title">Human evaluation</div>
+                    <p class="card-desc">Real people review your code. Not algorithms. Not AI.</p>
+                </div>
+                <div class="glass-card solution">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                        </svg>
+                    </div>
+                    <div class="card-title">Anonymous grading</div>
+                    <p class="card-desc">Your college name is hidden. You're judged only on your work.</p>
+                </div>
+                <div class="glass-card solution">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+                        </svg>
+                    </div>
+                    <div class="card-title">Transparent scoring</div>
+                    <p class="card-desc">You see your scores and get real feedback on your performance.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="guarantee">
+            <div class="guarantee-content">
+                <div class="guarantee-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                    </svg>
+                </div>
+                <p class="guarantee-text">Top 3 get a real interview. Guaranteed.</p>
+                <p class="guarantee-subtext">Not a mock. Not a certificate. A real interview for a real role.</p>
+            </div>
+        </section>
+
+        <section class="who-grid">
+            <div class="who-card for-you">
+                <h3><span>✓</span> This is for you if</h3>
+                <p>You're in your final year or pre-final year. You've been grinding but can't get past the filters. You want a fair shot to prove what you can do.</p>
+            </div>
+            <div class="who-card not-for-you">
+                <h3><span>✕</span> This is not for you if</h3>
+                <p>You're looking for shortcuts or handholding. You want a certificate to add to LinkedIn. You're not willing to show up and compete.</p>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="event-tags">
+                <div class="event-tag">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                    </svg>
+                    February 2025
+                </div>
+                <div class="event-tag">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                    </svg>
+                    Chennai
+                </div>
+                <div class="event-tag">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                    </svg>
+                    In-Person
+                </div>
+                <div class="event-tag price-tag">
+                    ₹499 to Register
+                </div>
+            </div>
+            <a href="https://rzp.io/rzp/C8JpxIr" class="cta-button">
+                Register for ₹499
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </a>
+            <p class="limited-text">₹499 because this is for people who show up, not just sign up. <strong>Registration closes 20th Jan, 11:59 PM.</strong></p>
+        </section>
+
+        <footer class="footer">
+            IndustryReady · Questions? <a href="mailto:noblenod@gmail.com">Contact us</a>
+        </footer>
     </div>
 </body>
 </html>
