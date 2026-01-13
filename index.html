@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+        <script type="text/javascript">
+        (function() {
+            var ua = navigator.userAgent || navigator.vendor || window.opera;
+            var isInstagram = ua.indexOf('Instagram') > -1;
+
+            if (isInstagram) {
+                // 1. Check if we have already tried to redirect to avoid infinite loops
+                if (!window.location.hash.includes('#loaded')) {
+
+                    // 2. Add a hash to the URL and reload
+                    // This often forces the IAB to refresh its header and actually render the page
+                    window.location.hash = 'loaded';
+                    window.location.reload();
+
+                    // 3. For Android: Attempt to force open Chrome via the 'intent' protocol
+                    if (ua.indexOf('Android') > -1) {
+                        var chromeUrl = 'intent://' + window.location.host + window.location.pathname + '#Intent;scheme=https;package=com.android.chrome;end';
+                        window.location.href = chromeUrl;
+                    }
+                }
+            }
+        })();
+        </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prove Yourself | IndustryReady Challenge</title>
