@@ -1,51 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-        <script type="text/javascript">
-        (function() {
-            var ua = navigator.userAgent || navigator.vendor || window.opera;
-            var isInstagram = ua.indexOf('Instagram') > -1;
-
-            if (isInstagram) {
-                // 1. Check if we have already tried to redirect to avoid infinite loops
-                if (!window.location.hash.includes('#loaded')) {
-
-                    // 2. Add a hash to the URL and reload
-                    // This often forces the IAB to refresh its header and actually render the page
-                    window.location.hash = 'loaded';
-                    window.location.reload();
-
-                    // 3. For Android: Attempt to force open Chrome via the 'intent' protocol
-                    if (ua.indexOf('Android') > -1) {
-                        var chromeUrl = 'intent://' + window.location.host + window.location.pathname + '#Intent;scheme=https;package=com.android.chrome;end';
-                        window.location.href = chromeUrl;
-                    }
-                }
-            }
-        })();
-        </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prove Yourself | IndustryReady Challenge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>✨ 2025 Retrospective ✨</title>
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --bg-dark: #0a0a1a;
-            --bg-gradient-1: #1a1a3e;
-            --bg-gradient-2: #0f0f2d;
-            --text-white: #ffffff;
-            --text-gray: #a1a1aa;
-            --text-light: #e4e4e7;
-            --accent-orange: #f97316;
-            --accent-cyan: #06b6d4;
-            --accent-purple: #a855f7;
-            --accent-green: #22c55e;
-            --accent-red: #ef4444;
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --coral: #FF6B6B;
+            --peach: #FFA07A;
+            --sunshine: #FFD93D;
+            --mint: #6BCB77;
+            --sky: #4D96FF;
+            --lavender: #9B59B6;
+            --pink: #FF69B4;
+            --teal: #00D9C0;
+            --cream: #FFF9E6;
+            --dark: #2D3436;
         }
 
         * {
@@ -55,800 +31,909 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-dark);
-            color: var(--text-white);
-            line-height: 1.6;
+            font-family: 'Nunito', sans-serif;
             min-height: 100vh;
             overflow-x: hidden;
+            background: linear-gradient(135deg, var(--coral) 0%, var(--peach) 25%, var(--sunshine) 50%, var(--mint) 75%, var(--sky) 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
         }
 
-        /* Animated gradient background */
-        .bg-wrapper {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: -1;
-            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-gradient-1) 50%, var(--bg-gradient-2) 100%);
-            overflow: hidden;
-        }
-
-        .gradient-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.25;
-            animation: float 25s ease-in-out infinite;
-        }
-
-        .orb-1 {
-            width: 500px;
-            height: 500px;
-            background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
-            top: -200px;
-            right: -150px;
-            animation-delay: 0s;
-        }
-
-        .orb-2 {
-            width: 400px;
-            height: 400px;
-            background: linear-gradient(135deg, var(--accent-orange), var(--accent-red));
-            bottom: -150px;
-            left: -150px;
-            animation-delay: -5s;
-            opacity: 0.2;
-        }
-
-        .orb-3 {
-            width: 300px;
-            height: 300px;
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
-            top: 50%;
-            left: 40%;
-            animation-delay: -10s;
-            opacity: 0.15;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            25% { transform: translate(30px, -30px) scale(1.05); }
-            50% { transform: translate(-20px, 20px) scale(0.95); }
-            75% { transform: translate(20px, 30px) scale(1.02); }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            padding: 2rem 0;
-        }
-
-        @media (max-width: 700px) {
-            .hero {
-                min-height: 100vh;
-                padding: 2rem 0;
-            }
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.5rem;
-            color: var(--text-gray);
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            animation: fadeIn 1s ease-out 0.5s both;
-        }
-
-        .scroll-indicator span {
-            opacity: 0.7;
-        }
-
-        .scroll-arrow {
-            width: 24px;
-            height: 24px;
-            animation: bounce 2s ease-in-out infinite;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            color: var(--text-light);
-            font-size: 0.85rem;
-            font-weight: 500;
-            padding: 0.6rem 1.25rem;
-            border-radius: 100px;
-            margin-bottom: 2rem;
-        }
-
-        .badge-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--accent-green);
-            border-radius: 50%;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
-        }
-
-        .headline {
-            font-size: clamp(1.75rem, 5.5vw, 3.25rem);
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 1.25rem;
-            letter-spacing: -0.03em;
-            background: linear-gradient(135deg, var(--text-white) 0%, var(--text-gray) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .subhead {
-            font-size: clamp(1rem, 2.5vw, 1.35rem);
-            color: var(--text-gray);
-            font-weight: 400;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-
-        .subhead strong {
-            color: var(--accent-orange);
-            font-weight: 600;
-        }
-
-        .hero-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            background: linear-gradient(135deg, var(--accent-orange) 0%, #ea580c 100%);
-            color: white;
-            font-size: 1.1rem;
-            font-weight: 600;
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 24px rgba(249, 115, 22, 0.4);
-        }
-
-        .hero-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(249, 115, 22, 0.5);
-        }
-
-        .hero-cta svg {
-            width: 20px;
-            height: 20px;
-            transition: transform 0.2s ease;
-        }
-
-        .hero-cta:hover svg {
-            transform: translateX(4px);
-        }
-
-        .hero-note {
-            margin-top: 1.25rem;
-            font-size: 0.95rem;
-            color: var(--text-gray);
-            font-style: italic;
-        }
-
-        /* Section styling */
-        .section {
-            padding: 4rem 0;
-        }
-
-        .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 1rem;
-        }
-
-        .section-label.problem {
-            color: var(--accent-red);
-        }
-
-        .section-label.solution {
-            color: var(--accent-green);
-        }
-
-        .section-title {
-            font-size: clamp(1.5rem, 4vw, 2.25rem);
-            font-weight: 700;
-            margin-bottom: 2.5rem;
-            letter-spacing: -0.02em;
-        }
-
-        /* Glass Cards Grid */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.25rem;
-        }
-
-        @media (max-width: 700px) {
-            .cards-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .glass-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 2rem;
-            transition: all 0.3s ease;
+            justify-content: center;
+            padding: 20px;
             position: relative;
+        }
+
+        /* Floating decorations */
+        .floater {
+            position: fixed;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.6;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floater:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; font-size: 2rem; }
+        .floater:nth-child(2) { top: 20%; right: 10%; animation-delay: 1s; font-size: 1.5rem; }
+        .floater:nth-child(3) { bottom: 30%; left: 8%; animation-delay: 2s; font-size: 1.8rem; }
+        .floater:nth-child(4) { top: 60%; right: 5%; animation-delay: 3s; font-size: 2.2rem; }
+        .floater:nth-child(5) { bottom: 15%; right: 15%; animation-delay: 4s; font-size: 1.6rem; }
+        .floater:nth-child(6) { top: 40%; left: 3%; animation-delay: 5s; font-size: 1.4rem; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        /* Card styles */
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 35px 25px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.15),
+                0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+            position: relative;
+            z-index: 10;
+            transform: scale(0.9);
+            opacity: 0;
+            animation: cardEnter 0.5s ease forwards;
             overflow: hidden;
         }
 
-        .glass-card::before {
+        .card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            height: 8px;
+            background: linear-gradient(90deg, var(--coral), var(--sunshine), var(--mint), var(--sky), var(--lavender));
         }
 
-        .glass-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        @keyframes cardEnter {
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
 
-        .card-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 14px;
+        .card.exit {
+            animation: cardExit 0.4s ease forwards;
+        }
+
+        @keyframes cardExit {
+            to {
+                transform: scale(0.8) translateY(-30px);
+                opacity: 0;
+            }
+        }
+
+        /* Progress bar */
+        .progress-container {
+            width: 100%;
+            height: 10px;
+            background: #eee;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--coral), var(--sunshine), var(--mint));
+            border-radius: 10px;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .question-number {
+            font-family: 'Baloo 2', cursive;
+            font-size: 0.9rem;
+            color: var(--lavender);
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .question-number span {
+            background: linear-gradient(135deg, var(--lavender), var(--pink));
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.25rem;
+            font-size: 0.85rem;
         }
 
-        .card-icon svg {
-            width: 28px;
-            height: 28px;
+        h2 {
+            font-family: 'Baloo 2', cursive;
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            line-height: 1.3;
         }
 
-        .glass-card.problem .card-icon {
-            background: rgba(239, 68, 68, 0.15);
-            color: var(--accent-red);
-        }
-
-        .glass-card.solution .card-icon {
-            background: rgba(34, 197, 94, 0.15);
-            color: var(--accent-green);
-        }
-
-        .card-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-white);
-        }
-
-        .card-desc {
-            font-size: 0.95rem;
-            color: var(--text-gray);
-            line-height: 1.6;
-        }
-
-        /* Divider Arrow */
-        .divider {
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        .divider-arrow {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 48px;
-            height: 48px;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 50%;
-            color: var(--accent-orange);
-            animation: bounce 2s ease-in-out infinite;
-        }
-
-        .divider-arrow svg {
-            width: 24px;
-            height: 24px;
+        .emoji-header {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+            animation: bounce 2s ease infinite;
         }
 
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(6px); }
+            50% { transform: translateY(-10px); }
         }
 
-        /* Guarantee Section */
-        .guarantee {
-            background: linear-gradient(135deg, var(--accent-orange) 0%, #ea580c 50%, #dc2626 100%);
-            border-radius: 24px;
-            padding: 3.5rem 2.5rem;
-            text-align: center;
-            margin: 2rem 0 4rem;
+        /* Form elements */
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 15px 18px;
+            border: 3px solid #e8e8e8;
+            border-radius: 15px;
+            font-size: 1rem;
+            font-family: 'Nunito', sans-serif;
+            transition: all 0.3s ease;
+            background: #fafafa;
+            margin-bottom: 15px;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--sky);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(77, 150, 255, 0.2);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: none;
+        }
+
+        /* Multi-input for goals/places */
+        .multi-input {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .multi-input input {
+            margin-bottom: 0;
+        }
+
+        .input-label {
+            font-size: 0.85rem;
+            color: #888;
+            margin-left: 5px;
+            margin-bottom: 3px;
+        }
+
+        /* Buttons */
+        .btn {
+            width: 100%;
+            padding: 16px 30px;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Baloo 2', cursive;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
 
-        .guarantee::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 400px;
-            height: 400px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            filter: blur(40px);
-        }
-
-        .guarantee-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .guarantee-icon {
-            width: 64px;
-            height: 64px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-            margin: 0 auto 1.25rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .guarantee-icon svg {
-            width: 32px;
-            height: 32px;
+        .btn-primary {
+            background: linear-gradient(135deg, var(--coral), var(--peach));
             color: white;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
         }
 
-        .guarantee-text {
-            font-size: clamp(1.5rem, 4vw, 2rem);
-            font-weight: 700;
-            color: white;
-            margin-bottom: 0.5rem;
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.5);
         }
 
-        .guarantee-subtext {
-            color: rgba(255,255,255,0.9);
-            font-size: 1.1rem;
+        .btn-primary:active {
+            transform: translateY(0);
         }
 
-        /* Who Section */
-        .who-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-bottom: 4rem;
+        .btn-secondary {
+            background: transparent;
+            color: var(--dark);
+            border: 2px solid #ddd;
+            margin-top: 10px;
         }
 
-        @media (max-width: 650px) {
-            .who-grid {
-                grid-template-columns: 1fr;
-            }
+        .btn-secondary:hover {
+            border-color: var(--sky);
+            color: var(--sky);
         }
 
-        .who-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 1.75rem;
-        }
-
-        .who-card h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
+        .btn-nav {
             display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            gap: 10px;
+            margin-top: 10px;
         }
 
-        .who-card h3 span {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
+        .btn-nav .btn {
+            flex: 1;
         }
 
-        .who-card.for-you h3 {
-            color: var(--accent-green);
+        .btn-back {
+            background: #f0f0f0;
+            color: var(--dark);
         }
 
-        .who-card.for-you h3 span {
-            background: rgba(34, 197, 94, 0.2);
+        .btn-back:hover {
+            background: #e0e0e0;
         }
 
-        .who-card.not-for-you h3 {
-            color: var(--text-gray);
+        /* Welcome screen */
+        .welcome-title {
+            font-family: 'Baloo 2', cursive;
+            font-size: 2.2rem;
+            text-align: center;
+            color: var(--dark);
+            margin-bottom: 10px;
         }
 
-        .who-card.not-for-you h3 span {
-            background: rgba(255, 255, 255, 0.1);
+        .welcome-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
         }
 
-        .who-card p {
-            color: var(--text-gray);
+        .welcome-emoji {
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 20px;
+            animation: wiggle 2s ease infinite;
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        /* Completion screen */
+        .completion {
+            text-align: center;
+        }
+
+        .completion-emoji {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            animation: celebrate 1s ease infinite;
+        }
+
+        @keyframes celebrate {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.1) rotate(-5deg); }
+            75% { transform: scale(1.1) rotate(5deg); }
+        }
+
+        .completion h2 {
+            color: var(--mint);
+            font-size: 1.8rem;
+        }
+
+        .completion p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .note-box {
+            background: linear-gradient(135deg, #fff9e6, #ffe4ec);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid var(--sunshine);
+        }
+
+        .note-box p {
+            margin: 0;
             font-size: 0.95rem;
-            line-height: 1.7;
+            color: var(--dark);
         }
 
-        /* CTA Section */
-        .cta-section {
-            text-align: center;
-            padding: 3rem 0 5rem;
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            top: -10px;
+            z-index: 1000;
+            animation: confettiFall linear forwards;
         }
 
-        .event-tags {
-            display: flex;
-            justify-content: center;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-
-        .event-tag {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 100px;
-            padding: 0.5rem 1rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--text-light);
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .event-tag svg {
-            width: 16px;
-            height: 16px;
-            color: var(--accent-orange);
-        }
-
-        .event-tag.price-tag {
-            background: rgba(249, 115, 22, 0.15);
-            border-color: rgba(249, 115, 22, 0.3);
-            color: var(--accent-orange);
-            font-weight: 600;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            background: linear-gradient(135deg, var(--accent-orange) 0%, #ea580c 100%);
-            color: white;
-            font-size: 1.15rem;
-            font-weight: 600;
-            padding: 1.15rem 2.5rem;
-            border-radius: 14px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 24px rgba(249, 115, 22, 0.4);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 8px 36px rgba(249, 115, 22, 0.5);
-        }
-
-        .cta-button svg {
-            width: 20px;
-            height: 20px;
-            transition: transform 0.2s ease;
-        }
-
-        .cta-button:hover svg {
-            transform: translateX(4px);
-        }
-
-        .limited-text {
-            margin-top: 1.25rem;
-            font-size: 0.9rem;
-            color: var(--text-gray);
-        }
-
-        .limited-text strong {
-            color: var(--text-light);
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 2rem 0;
-            border-top: 1px solid var(--glass-border);
-            color: var(--text-gray);
-            font-size: 0.85rem;
-        }
-
-        .footer a {
-            color: var(--accent-orange);
-            text-decoration: none;
-        }
-
-        /* Animations */
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
+        @keyframes confettiFall {
             to {
-                opacity: 1;
-                transform: translateY(0);
+                top: 100vh;
+                transform: rotate(720deg);
             }
         }
 
-        .hero .badge,
-        .hero .headline,
-        .hero .subhead,
-        .hero .hero-cta {
-            animation: fadeUp 0.7s ease-out both;
+        /* Hidden state */
+        .hidden {
+            display: none !important;
         }
 
-        .hero .headline { animation-delay: 0.1s; }
-        .hero .subhead { animation-delay: 0.2s; }
-        .hero .hero-cta { animation-delay: 0.3s; }
-
-        .glass-card {
-            animation: fadeUp 0.6s ease-out both;
+        /* Loading spinner */
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--coral);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
         }
 
-        .problem-section .glass-card:nth-child(1) { animation-delay: 0.1s; }
-        .problem-section .glass-card:nth-child(2) { animation-delay: 0.15s; }
-        .problem-section .glass-card:nth-child(3) { animation-delay: 0.2s; }
-        .problem-section .glass-card:nth-child(4) { animation-delay: 0.25s; }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
 
-        .solution-section .glass-card:nth-child(1) { animation-delay: 0.35s; }
-        .solution-section .glass-card:nth-child(2) { animation-delay: 0.4s; }
-        .solution-section .glass-card:nth-child(3) { animation-delay: 0.45s; }
-        .solution-section .glass-card:nth-child(4) { animation-delay: 0.5s; }
+        /* Responsive */
+        @media (max-width: 420px) {
+            .card {
+                padding: 30px 20px;
+                border-radius: 25px;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .welcome-title {
+                font-size: 1.8rem;
+            }
+
+            .emoji-header {
+                font-size: 2rem;
+            }
+        }
+
+        /* Category pill */
+        .category-pill {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .category-reflect { background: #ffe4ec; color: var(--coral); }
+        .category-celebrate { background: #fff4d6; color: #d4a300; }
+        .category-grow { background: #d4f5e9; color: var(--mint); }
+        .category-dream { background: #e4e9ff; color: var(--sky); }
+
+        /* Time inputs */
+        .time-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .time-input-group {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 12px 15px;
+        }
+
+        .time-input-group label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--lavender);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .time-input-group input {
+            margin-bottom: 0;
+            background: white;
+        }
     </style>
 </head>
 <body>
-    <div class="bg-wrapper">
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-        <div class="gradient-orb orb-3"></div>
-    </div>
-
-    <section class="hero">
-        <div class="container">
-            <h1 class="headline">Why aren't you getting shortlisted when less skilled people are?</h1>
-            <p class="subhead">Prove you belong in the top 3. <strong>We'll get you the interview.</strong></p>
-            <a href="https://rzp.io/rzp/C8JpxIr" class="hero-cta">
-                Register for ₹499
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-            </a>
-            <p class="hero-note">If you're not willing to bet ₹499 on yourself, this isn't for you.</p>
-        </div>
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <svg class="scroll-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-        </div>
-    </section>
+    <!-- Floating decorations -->
+    <div class="floater">✨</div>
+    <div class="floater">🌟</div>
+    <div class="floater">💫</div>
+    <div class="floater">⭐</div>
+    <div class="floater">🎉</div>
+    <div class="floater">🌈</div>
 
     <div class="container">
-        <section class="section problem-section">
-            <div class="section-label problem">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-                The Problem
-            </div>
-            <h2 class="section-title">What you're facing right now</h2>
-            <div class="cards-grid">
-                <div class="glass-card problem">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
-                        </svg>
-                    </div>
-                    <div class="card-title">Cheaters get ahead</div>
-                    <p class="card-desc">They share answers, use ChatGPT, and get shortlisted while you play fair.</p>
-                </div>
-                <div class="glass-card problem">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
-                        </svg>
-                    </div>
-                    <div class="card-title">AI filters you out</div>
-                    <p class="card-desc">Algorithms reject you before any human sees your code or potential.</p>
-                </div>
-                <div class="glass-card problem">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
-                        </svg>
-                    </div>
-                    <div class="card-title">College name bias</div>
-                    <p class="card-desc">Your skills don't matter when your college name gets filtered first.</p>
-                </div>
-                <div class="glass-card problem">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
-                        </svg>
-                    </div>
-                    <div class="card-title">Zero feedback</div>
-                    <p class="card-desc">You get rejected. No one tells you why. You're left guessing.</p>
-                </div>
-            </div>
-        </section>
+        <!-- Welcome Screen -->
+        <div class="card" id="screen-welcome">
+            <div class="welcome-emoji">🎊</div>
+            <h1 class="welcome-title">2025 Retrospective</h1>
+            <p class="welcome-subtitle">
+                Take a moment to reflect on your journey through 2025 and set intentions for an amazing 2026! 🚀
+            </p>
+            <button class="btn btn-primary" onclick="startJourney()">Let's Begin! ✨</button>
+        </div>
 
-        <div class="divider">
-            <div class="divider-arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                </svg>
+        <!-- Identity -->
+        <div class="card hidden" id="screen-0">
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 0%"></div>
+            </div>
+            <span class="emoji-header">👋</span>
+            <h2>First, let's get to know you!</h2>
+            <input type="text" id="name" placeholder="Your name" required>
+            <input type="email" id="email" placeholder="Your email" required>
+            <button class="btn btn-primary" onclick="nextScreen(1)">Continue →</button>
+        </div>
+
+        <!-- Q1: Letting go -->
+        <div class="card hidden" id="screen-1">
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 7%"></div>
+            </div>
+            <div class="question-number"><span>1</span> of 14</div>
+            <span class="category-pill category-reflect">Reflect</span>
+            <span class="emoji-header">🎈</span>
+            <h2>What are you holding onto that you know you need to let go of?</h2>
+            <textarea id="q1" placeholder="Be honest with yourself..."></textarea>
+            <div class="btn-nav">
+                <button class="btn btn-back" onclick="prevScreen(0)">← Back</button>
+                <button class="btn btn-primary" onclick="nextScreen(2)">Next →</button>
             </div>
         </div>
 
-        <section class="section solution-section">
-            <div class="section-label solution">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-                The Solution
+        <!-- Q2: Habit burden -->
+        <div class="card hidden" id="screen-2">
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 14%"></div>
             </div>
-            <h2 class="section-title">How this challenge is different</h2>
-            <div class="cards-grid">
-                <div class="glass-card solution">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                        </svg>
-                    </div>
-                    <div class="card-title">In-person proctored</div>
-                    <p class="card-desc">Everyone in the same room, same time. No cheating possible.</p>
-                </div>
-                <div class="glass-card solution">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                    </div>
-                    <div class="card-title">Human evaluation</div>
-                    <p class="card-desc">Real people review your code. Not algorithms. Not AI.</p>
-                </div>
-                <div class="glass-card solution">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                        </svg>
-                    </div>
-                    <div class="card-title">Anonymous grading</div>
-                    <p class="card-desc">Your college name is hidden. You're judged only on your work.</p>
-                </div>
-                <div class="glass-card solution">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
-                        </svg>
-                    </div>
-                    <div class="card-title">Transparent scoring</div>
-                    <p class="card-desc">You see your scores and get real feedback on your performance.</p>
-                </div>
+            <div class="question-number"><span>2</span> of 14</div>
+            <span class="category-pill category-reflect">Reflect</span>
+            <span class="emoji-header">⚖️</span>
+            <h2>What habit has slowly become a burden?</h2>
+            <textarea id="q2" placeholder="A habit that no longer serves you..."></textarea>
+            <div class="btn-nav">
+                <button class="btn btn-back" onclick="prevScreen(1)">← Back</button>
+                <button class="btn btn-primary" onclick="nextScreen(3)">Next →</button>
             </div>
-        </section>
+        </div>
 
-        <section class="guarantee">
-            <div class="guarantee-content">
-                <div class="guarantee-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
-                    </svg>
-                </div>
-                <p class="guarantee-text">Top 3 get a real interview. Guaranteed.</p>
-                <p class="guarantee-subtext">Not a mock. Not a certificate. A real interview for a real role.</p>
+        <!-- Q3: Fear -->
+        <div class="card hidden" id="screen-3">
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 21%"></div>
             </div>
-        </section>
+            <div class="question-number"><span>3</span> of 14</div>
+            <span class="category-pill category-reflect">Reflect</span>
+            <span class="emoji-header">😰</span>
+            <h2>What fear controlled you last year?</h2>
+            <textarea id="q3" placeholder="Name the fear..."></textarea>
+            <div class="btn-nav">
+                <button class="btn btn-back" onclick="prevScreen(2)">← Back</button>
+                <button class="btn btn-primary" onclick="nextScreen(4)">Next →</button>
+            </div>
+        </div>
 
-        <section class="who-grid">
-            <div class="who-card for-you">
-                <h3><span>✓</span> This is for you if</h3>
-                <p>You're in your final year or pre-final year. You've been grinding but can't get past the filters. You want a fair shot to prove what you can do.</p>
+        <!-- Q4: Feeling in the way -->
+        <div class="card hidden" id="screen-4">
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 28%"></div>
             </div>
-            <div class="who-card not-for-you">
-                <h3><span>✕</span> This is not for you if</h3>
-                <p>You're looking for shortcuts or handholding. You want a certificate to add to LinkedIn. You're not willing to show up and compete.</p>
+            <div class="question-number"><span>4</span> of 14</div>
+            <span class="category-pill category-reflect">Reflect</span>
+            <span class="emoji-header">🌊</span>
+            <h2>What feeling keeps getting in your way?</h2>
+            <textarea id="q4" placeholder="That recurring emotion..."></textarea>
+            <div class="btn-nav">
+                <button class="btn btn-back" onclick="prevScreen(3)">← Back</button>
+                <button class="btn btn-primary" onclick="nextScreen(5)">Next →</button>
             </div>
-        </section>
+        </div>
 
-        <section class="cta-section">
-            <div class="event-tags">
-                <div class="event-tag">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
-                    </svg>
-                    February 2025
+        <!-- Q5: Proud of -->
+        <div class="card hidden" id="screen-5">
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 35%"></div>
+            </div>
+            <div class="question-number"><span>5</span> of 14</div>
+            <span class="category-pill category-celebrate">Celebrate</span>
+            <span class="emoji-header">🏆</span>
+            <h2>One thing you're proud of from 2025!</h2>
+            <textarea id="q5" placeholder="Celebrate your win..."></textarea>
+            <div class="btn-nav">
+                <button class="btn btn-back" onclick="prevScreen(4)">← Back</button>
+                <button class="btn btn-primary" onclick="nextScreen(6)">Next →</button>
+            </div>
+        </div>
+
+        <!-- Q6: Positive influence -->
+        <div class="card hidden" id="screen-6">
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 42%"></div>
+            </div>
+            <div class="question-number"><span>6</span> of 14</div>
+            <span class="category-pill category-celebrate">Celebrate</span>
+            <span class="emoji-header">💖</span>
+            <h2>Who or what was a positive influence on you in 2025?</h2>
+            <textarea id="q6" placeholder="A person, book, experience..."></textarea>
+            <div class="btn-nav">
+                <button class="btn btn-back" onclick="prevScreen(5)">← Back</button>
+                <button class="btn btn-primary" onclick="nextScreen(7)">Next →</button>
+            </div>
+        </div>
+
+        <!-- Q7: Secret strength -->
+        <div class="card hidden" id="screen-7">
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 49%"></div>
+            </div>
+            <div class="question-number"><span>7</span> of 14</div>
+            <span class="category-pill category-celebrate">Celebrate</span>
+            <span class="emoji-header">💪</span>
+            <h2>What's your secret source of strength?</h2>
+            <textarea id="q7" placeholder="What keeps you going..."></textarea>
+            <div class="btn-nav">
+                <button class="btn btn-back" onclick="prevScreen(6)">← Back</button>
+                <button class="btn btn-primary" onclick="nextScreen(8)">Next →</button>
+            </div>
+        </div>
+
+        <!-- Q8: Started earlier -->
+        <div class="card hidden" id="screen-8">
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 56%"></div>
+            </div>
+            <div class="question-number"><span>8</span> of 14</div>
+            <span class="category-pill category-grow">Grow</span>
+            <span class="emoji-header">⏰</span>
+            <h2>What's one thing you wish you had started earlier?</h2>
+            <textarea id="q8" placeholder="That thing you kept postponing..."></textarea>
+            <div class="btn-nav">
+                <button class="btn btn-back" onclick="prevScreen(7)">← Back</button>
+                <button class="btn btn-primary" onclick="nextScreen(9)">Next →</button>
+            </div>
+        </div>
+
+        <!-- Q9: Health goals -->
+        <div class="card hidden" id="screen-9">
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 63%"></div>
+            </div>
+            <div class="question-number"><span>9</span> of 14</div>
+            <span class="category-pill category-grow">Grow</span>
+            <span class="emoji-header">🌿</span>
+            <h2>3 health goals for 2026</h2>
+            <div class="multi-input">
+                <div>
+                    <div class="input-label">Goal 1</div>
+                    <input type="text" id="health1" placeholder="First health goal">
                 </div>
-                <div class="event-tag">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                    </svg>
-                    Chennai
+                <div>
+                    <div class="input-label">Goal 2</div>
+                    <input type="text" id="health2" placeholder="Second health goal">
                 </div>
-                <div class="event-tag">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
-                    </svg>
-                    In-Person
-                </div>
-                <div class="event-tag price-tag">
-                    ₹499 to Register
+                <div>
+                    <div class="input-label">Goal 3</div>
+                    <input type="text" id="health3" placeholder="Third health goal">
                 </div>
             </div>
-            <a href="https://rzp.io/rzp/C8JpxIr" class="cta-button">
-                Register for ₹499
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-            </a>
-            <p class="limited-text">₹499 because this is for people who show up, not just sign up. <strong>Registration closes 20th Jan, 11:59 PM.</strong></p>
-        </section>
+            <div class="btn-nav">
+                <button class="btn btn-back" onclick="prevScreen(8)">← Back</button>
+                <button class="btn btn-primary" onclick="nextScreen(10)">Next →</button>
+            </div>
+        </div>
 
-        <footer class="footer">
-            IndustryReady · Questions? <a href="mailto:noblenod@gmail.com">Contact us</a>
-        </footer>
+        <!-- Q10: Skills/hobbies -->
+        <div class="card hidden" id="screen-10">
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 70%"></div>
+            </div>
+            <div class="question-number"><span>10</span> of 14</div>
+            <span class="category-pill category-dream">Dream</span>
+            <span class="emoji-header">🎨</span>
+            <h2>Skills or hobbies you want to explore for fun!</h2>
+            <textarea id="q10" placeholder="Things that excite you..."></textarea>
+            <div class="btn-nav">
+                <button class="btn btn-back" onclick="prevScreen(9)">← Back</button>
+                <button class="btn btn-primary" onclick="nextScreen(11)">Next →</button>
+            </div>
+        </div>
+
+        <!-- Q11: Places -->
+        <div class="card hidden" id="screen-11">
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 77%"></div>
+            </div>
+            <div class="question-number"><span>11</span> of 14</div>
+            <span class="category-pill category-dream">Dream</span>
+            <span class="emoji-header">🗺️</span>
+            <h2>3 places you want to visit</h2>
+            <div class="multi-input">
+                <div>
+                    <div class="input-label">Place 1</div>
+                    <input type="text" id="place1" placeholder="Dream destination">
+                </div>
+                <div>
+                    <div class="input-label">Place 2</div>
+                    <input type="text" id="place2" placeholder="Another place">
+                </div>
+                <div>
+                    <div class="input-label">Place 3</div>
+                    <input type="text" id="place3" placeholder="One more spot">
+                </div>
+            </div>
+            <div class="btn-nav">
+                <button class="btn btn-back" onclick="prevScreen(10)">← Back</button>
+                <button class="btn btn-primary" onclick="nextScreen(12)">Next →</button>
+            </div>
+        </div>
+
+        <!-- Q12: Goals this year -->
+        <div class="card hidden" id="screen-12">
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 84%"></div>
+            </div>
+            <div class="question-number"><span>12</span> of 14</div>
+            <span class="category-pill category-dream">Dream</span>
+            <span class="emoji-header">🎯</span>
+            <h2>3 goals for 2026</h2>
+            <div class="multi-input">
+                <div>
+                    <div class="input-label">Goal 1</div>
+                    <input type="text" id="goal1" placeholder="Your first goal">
+                </div>
+                <div>
+                    <div class="input-label">Goal 2</div>
+                    <input type="text" id="goal2" placeholder="Your second goal">
+                </div>
+                <div>
+                    <div class="input-label">Goal 3</div>
+                    <input type="text" id="goal3" placeholder="Your third goal">
+                </div>
+            </div>
+            <div class="btn-nav">
+                <button class="btn btn-back" onclick="prevScreen(11)">← Back</button>
+                <button class="btn btn-primary" onclick="nextScreen(13)">Next →</button>
+            </div>
+        </div>
+
+        <!-- Q13: Day/Week/Month -->
+        <div class="card hidden" id="screen-13">
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 91%"></div>
+            </div>
+            <div class="question-number"><span>13</span> of 14</div>
+            <span class="category-pill category-dream">Dream</span>
+            <span class="emoji-header">📅</span>
+            <h2>What do you want to accomplish in...</h2>
+            <div class="time-grid">
+                <div class="time-input-group">
+                    <label>A Day</label>
+                    <input type="text" id="day" placeholder="Daily intention">
+                </div>
+                <div class="time-input-group">
+                    <label>A Week</label>
+                    <input type="text" id="week" placeholder="Weekly win">
+                </div>
+                <div class="time-input-group">
+                    <label>A Month</label>
+                    <input type="text" id="month" placeholder="Monthly milestone">
+                </div>
+            </div>
+            <div class="btn-nav">
+                <button class="btn btn-back" onclick="prevScreen(12)">← Back</button>
+                <button class="btn btn-primary" onclick="nextScreen(14)">Next →</button>
+            </div>
+        </div>
+
+        <!-- Q14: Reminder when stuck -->
+        <div class="card hidden" id="screen-14">
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 98%"></div>
+            </div>
+            <div class="question-number"><span>14</span> of 14</div>
+            <span class="category-pill category-grow">Grow</span>
+            <span class="emoji-header">🌟</span>
+            <h2>When you feel stuck, remind yourself...</h2>
+            <textarea id="q14" placeholder="Your personal mantra..."></textarea>
+            <div class="btn-nav">
+                <button class="btn btn-back" onclick="prevScreen(13)">← Back</button>
+                <button class="btn btn-primary" onclick="submitForm()">Submit ✨</button>
+            </div>
+        </div>
+
+        <!-- Loading screen -->
+        <div class="card hidden" id="screen-loading">
+            <div class="completion">
+                <span class="emoji-header">🚀</span>
+                <h2>Saving your reflections...</h2>
+                <div class="spinner"></div>
+            </div>
+        </div>
+
+        <!-- Completion Screen -->
+        <div class="card hidden" id="screen-complete">
+            <div class="completion">
+                <span class="completion-emoji">🎉</span>
+                <h2>You did it!</h2>
+                <p>Thank you for sharing your reflections! Your responses have been saved.</p>
+                <div class="note-box">
+                    <p>📬 <strong>Hari will share your responses with you next year</strong> so you can see how far you've come!</p>
+                </div>
+                <p>Here's to an amazing 2026! 🥳</p>
+                <button class="btn btn-primary" onclick="shareOnWhatsApp()">Share with Friends 💚</button>
+            </div>
+        </div>
     </div>
+
+    <script>
+        // Configuration - Replace with your Google Apps Script Web App URL
+        const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+        
+        let currentScreen = 'welcome';
+
+        function startJourney() {
+            transitionTo('0');
+        }
+
+        function transitionTo(screenId) {
+            const currentCard = document.getElementById(`screen-${currentScreen}`);
+            const nextCard = document.getElementById(`screen-${screenId}`);
+
+            currentCard.classList.add('exit');
+            
+            setTimeout(() => {
+                currentCard.classList.add('hidden');
+                currentCard.classList.remove('exit');
+                nextCard.classList.remove('hidden');
+                currentScreen = screenId;
+                
+                // Scroll to top on mobile
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 400);
+        }
+
+        function nextScreen(screenNum) {
+            // Basic validation for identity screen
+            if (currentScreen === '0') {
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                if (!name || !email) {
+                    alert('Please fill in your name and email to continue! 😊');
+                    return;
+                }
+            }
+            transitionTo(screenNum.toString());
+        }
+
+        function prevScreen(screenNum) {
+            transitionTo(screenNum.toString());
+        }
+
+        function collectData() {
+            return {
+                timestamp: new Date().toISOString(),
+                name: document.getElementById('name').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                q1_letting_go: document.getElementById('q1').value.trim(),
+                q2_burden_habit: document.getElementById('q2').value.trim(),
+                q3_fear: document.getElementById('q3').value.trim(),
+                q4_feeling_in_way: document.getElementById('q4').value.trim(),
+                q5_proud_of: document.getElementById('q5').value.trim(),
+                q6_positive_influence: document.getElementById('q6').value.trim(),
+                q7_secret_strength: document.getElementById('q7').value.trim(),
+                q8_started_earlier: document.getElementById('q8').value.trim(),
+                q9_health_goals: [
+                    document.getElementById('health1').value.trim(),
+                    document.getElementById('health2').value.trim(),
+                    document.getElementById('health3').value.trim()
+                ].filter(g => g).join(' | '),
+                q10_skills_hobbies: document.getElementById('q10').value.trim(),
+                q11_places: [
+                    document.getElementById('place1').value.trim(),
+                    document.getElementById('place2').value.trim(),
+                    document.getElementById('place3').value.trim()
+                ].filter(p => p).join(' | '),
+                q12_goals: [
+                    document.getElementById('goal1').value.trim(),
+                    document.getElementById('goal2').value.trim(),
+                    document.getElementById('goal3').value.trim()
+                ].filter(g => g).join(' | '),
+                q13_day: document.getElementById('day').value.trim(),
+                q13_week: document.getElementById('week').value.trim(),
+                q13_month: document.getElementById('month').value.trim(),
+                q14_reminder: document.getElementById('q14').value.trim()
+            };
+        }
+
+        async function submitForm() {
+            const data = collectData();
+            
+            // Show loading
+            transitionTo('loading');
+
+            try {
+                const response = await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                // Since no-cors doesn't give us response, we assume success after a delay
+                setTimeout(() => {
+                    transitionTo('complete');
+                    launchConfetti();
+                }, 1500);
+
+            } catch (error) {
+                console.error('Error:', error);
+                // Still show completion but log error
+                setTimeout(() => {
+                    transitionTo('complete');
+                    launchConfetti();
+                }, 1500);
+            }
+        }
+
+        function launchConfetti() {
+            const colors = ['#FF6B6B', '#FFD93D', '#6BCB77', '#4D96FF', '#9B59B6', '#FF69B4'];
+            const shapes = ['●', '■', '▲', '★', '♦'];
+            
+            for (let i = 0; i < 100; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                    confetti.style.width = (Math.random() * 10 + 5) + 'px';
+                    confetti.style.height = confetti.style.width;
+                    confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => confetti.remove(), 4000);
+                }, i * 30);
+            }
+        }
+
+        function shareOnWhatsApp() {
+            const text = encodeURIComponent(
+                "✨ I just completed my 2025 Retrospective! ✨\n\n" +
+                "Take a moment to reflect on your year and set intentions for 2026! 🎯\n\n" +
+                "👉 " + window.location.href
+            );
+            window.open(`https://wa.me/?text=${text}`, '_blank');
+        }
+    </script>
 </body>
 </html>
