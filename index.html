@@ -793,9 +793,16 @@
         </div>
     </div>
 
+    <!-- Hidden iframe for form submission (bypasses CORS) -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
     <script>
-        // Configuration - Replace with your Google Apps Script Web App URL
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxeW7q6gF7DE8RwQb3m7cj7joXrSlAB7FfGgcO-CygG7NDOSQfRvLFSKdJToh2LJCMD/exec'
+        // ============================================================
+        // Your Google Apps Script Web App URL
+        // ============================================================
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxeW7q6gF7DE8RwQb3m7cj7joXrSlAB7FfGgcO-CygG7NDOSQfRvLFSKdJToh2LJCMD/exec';
+        // ============================================================
+        
         let currentScreen = 'welcome';
 
         function startJourney() {
@@ -814,13 +821,11 @@
                 nextCard.classList.remove('hidden');
                 currentScreen = screenId;
                 
-                // Scroll to top on mobile
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }, 400);
         }
 
         function nextScreen(screenNum) {
-            // Basic validation for identity screen
             if (currentScreen === '0') {
                 const name = document.getElementById('name').value.trim();
                 const email = document.getElementById('email').value.trim();
@@ -838,7 +843,7 @@
 
         function collectData() {
             return {
-                timestamp: new Date().toISOString(),
+                timestamp: new Date().toLocaleString(),
                 name: document.getElementById('name').value.trim(),
                 email: document.getElementById('email').value.trim(),
                 q1_letting_go: document.getElementById('q1').value.trim(),
@@ -872,41 +877,47 @@
             };
         }
 
-        async function submitForm() {
+        function submitForm() {
             const data = collectData();
             
-            // Show loading
+            // DEBUG: Log what we're collecting
+            console.log('=== FORM DATA DEBUG ===');
+            console.log('Full data object:', data);
+            for (const [key, value] of Object.entries(data)) {
+                console.log(`${key}: "${value}"`);
+            }
+            console.log('=== END DEBUG ===');
+            
             transitionTo('loading');
 
-            try {
-                const response = await fetch(GOOGLE_SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
-                });
-
-                // Since no-cors doesn't give us response, we assume success after a delay
-                setTimeout(() => {
-                    transitionTo('complete');
-                    launchConfetti();
-                }, 1500);
-
-            } catch (error) {
-                console.error('Error:', error);
-                // Still show completion but log error
-                setTimeout(() => {
-                    transitionTo('complete');
-                    launchConfetti();
-                }, 1500);
+            // Create a hidden form and submit it to the iframe
+            // This bypasses CORS because form submissions are allowed cross-origin
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = GOOGLE_SCRIPT_URL;
+            form.target = 'hidden_iframe';
+            
+            for (const [key, value] of Object.entries(data)) {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = key;
+                input.value = value;
+                form.appendChild(input);
             }
+            
+            document.body.appendChild(form);
+            form.submit();
+            document.body.removeChild(form);
+
+            // Show success after delay (form submission doesn't give us a callback)
+            setTimeout(() => {
+                transitionTo('complete');
+                launchConfetti();
+            }, 2500);
         }
 
         function launchConfetti() {
             const colors = ['#FF6B6B', '#FFD93D', '#6BCB77', '#4D96FF', '#9B59B6', '#FF69B4'];
-            const shapes = ['●', '■', '▲', '★', '♦'];
             
             for (let i = 0; i < 100; i++) {
                 setTimeout(() => {
