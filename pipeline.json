@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2025-01-22",
+  "lastUpdated": "2026-01-21",
   "candidates": [
     {
       "name": "Sh***",
-      "college": "UPES Dehradun",
+      "college": "University of Petroleum and Energy Studies, Dehradun",
       "status": "rewrite_requested"
     },
     {
       "name": "Ab***",
-      "college": "C. Abdul Hakeem College",
+      "college": "C. Abdul Hakeem College of Engineering and Technology",
       "status": "rewrite_requested"
     },
     {
@@ -18,12 +18,12 @@
     },
     {
       "name": "Am***",
-      "college": "IGNOU",
+      "college": "Indira Gandhi National Open University",
       "status": "awaiting_graduation"
     },
     {
       "name": "Ta***",
-      "college": "GCE Jalgaon",
+      "college": "Government College of Engineering, Jalgaon",
       "status": "call_scheduled"
     },
     {
@@ -33,7 +33,7 @@
     },
     {
       "name": "Na***",
-      "college": "UCE Tindivanam",
+      "college": "University College of Engineering, Tindivanam",
       "status": "awaiting_graduation"
     },
     {
@@ -43,27 +43,52 @@
     },
     {
       "name": "Sa***",
-      "college": "G. H. Raisoni College of Engineering",
-      "status": "checking_relocation"
+      "college": "G. H. Raisoni College of Engineering, Nagpur",
+      "status": "scheduling_call"
     },
     {
       "name": "Ni***",
-      "college": "SOIT, RGPV Bhopal",
+      "college": "School of Information Technology, RGPV Bhopal",
       "status": "awaiting_response"
     },
     {
       "name": "An***",
-      "college": "IIIT UNA",
-      "status": "awaiting_response"
+      "college": "Indian Institute of Information Technology, Una",
+      "status": "call_scheduled"
     },
     {
       "name": "Sa***",
-      "college": "Manakula Vinayagar Institute",
-      "status": "under_review"
+      "college": "Manakula Vinayagar Institute of Technology, Puducherry",
+      "status": "scheduling_call"
     },
     {
       "name": "Ch***",
-      "college": "Panimalar Institute of Technology",
+      "college": "Panimalar Institute of Technology, Chennai",
+      "status": "rewrite_requested"
+    },
+    {
+      "name": "Sh***",
+      "college": "Government Engineering College, Kushalnagar",
+      "status": "checking_relocation"
+    },
+    {
+      "name": "Ra***",
+      "college": "Amrita Vishwa Vidyapeetham, Amritapuri",
+      "status": "checking_relocation"
+    },
+    {
+      "name": "Ve***",
+      "college": "Vardhaman College of Engineering, Hyderabad",
+      "status": "scheduling_call"
+    },
+    {
+      "name": "Pr***",
+      "college": "Guru Nanak Dev Engineering College, Bidar",
+      "status": "rewrite_requested"
+    },
+    {
+      "name": "La***",
+      "college": "Dhanalakshmi Srinivasan Institute of Technology",
       "status": "under_review"
     }
   ]
