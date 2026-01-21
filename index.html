@@ -2,948 +2,144 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>✨ 2025 Retrospective ✨</title>
-    
-    <!-- Google Fonts -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NobleNod | Get a real shot at getting hired</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --coral: #FF6B6B;
-            --peach: #FFA07A;
-            --sunshine: #FFD93D;
-            --mint: #6BCB77;
-            --sky: #4D96FF;
-            --lavender: #9B59B6;
-            --pink: #FF69B4;
-            --teal: #00D9C0;
-            --cream: #FFF9E6;
-            --dark: #2D3436;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Nunito', sans-serif;
-            min-height: 100vh;
-            overflow-x: hidden;
-            background: linear-gradient(135deg, var(--coral) 0%, var(--peach) 25%, var(--sunshine) 50%, var(--mint) 75%, var(--sky) 100%);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .container {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            position: relative;
-        }
-
-        /* Floating decorations */
-        .floater {
-            position: fixed;
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0.6;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .floater:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; font-size: 2rem; }
-        .floater:nth-child(2) { top: 20%; right: 10%; animation-delay: 1s; font-size: 1.5rem; }
-        .floater:nth-child(3) { bottom: 30%; left: 8%; animation-delay: 2s; font-size: 1.8rem; }
-        .floater:nth-child(4) { top: 60%; right: 5%; animation-delay: 3s; font-size: 2.2rem; }
-        .floater:nth-child(5) { bottom: 15%; right: 15%; animation-delay: 4s; font-size: 1.6rem; }
-        .floater:nth-child(6) { top: 40%; left: 3%; animation-delay: 5s; font-size: 1.4rem; }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(10deg); }
-        }
-
-        /* Card styles */
-        .card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 30px;
-            padding: 35px 25px;
-            max-width: 400px;
-            width: 100%;
-            box-shadow: 
-                0 20px 60px rgba(0, 0, 0, 0.15),
-                0 0 0 1px rgba(255, 255, 255, 0.5) inset;
-            position: relative;
-            z-index: 10;
-            transform: scale(0.9);
-            opacity: 0;
-            animation: cardEnter 0.5s ease forwards;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 8px;
-            background: linear-gradient(90deg, var(--coral), var(--sunshine), var(--mint), var(--sky), var(--lavender));
-        }
-
-        @keyframes cardEnter {
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        .card.exit {
-            animation: cardExit 0.4s ease forwards;
-        }
-
-        @keyframes cardExit {
-            to {
-                transform: scale(0.8) translateY(-30px);
-                opacity: 0;
-            }
-        }
-
-        /* Progress bar */
-        .progress-container {
-            width: 100%;
-            height: 10px;
-            background: #eee;
-            border-radius: 10px;
-            margin-bottom: 25px;
-            overflow: hidden;
-        }
-
-        .progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, var(--coral), var(--sunshine), var(--mint));
-            border-radius: 10px;
-            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .question-number {
-            font-family: 'Baloo 2', cursive;
-            font-size: 0.9rem;
-            color: var(--lavender);
-            font-weight: 700;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .question-number span {
-            background: linear-gradient(135deg, var(--lavender), var(--pink));
-            color: white;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.85rem;
-        }
-
-        h2 {
-            font-family: 'Baloo 2', cursive;
-            font-size: 1.5rem;
-            color: var(--dark);
-            margin-bottom: 20px;
-            line-height: 1.3;
-        }
-
-        .emoji-header {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            display: block;
-            animation: bounce 2s ease infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        /* Form elements */
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 15px 18px;
-            border: 3px solid #e8e8e8;
-            border-radius: 15px;
-            font-size: 1rem;
-            font-family: 'Nunito', sans-serif;
-            transition: all 0.3s ease;
-            background: #fafafa;
-            margin-bottom: 15px;
-        }
-
-        input[type="text"]:focus,
-        input[type="email"]:focus,
-        textarea:focus {
-            outline: none;
-            border-color: var(--sky);
-            background: white;
-            box-shadow: 0 0 0 4px rgba(77, 150, 255, 0.2);
-        }
-
-        textarea {
-            min-height: 120px;
-            resize: none;
-        }
-
-        /* Multi-input for goals/places */
-        .multi-input {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .multi-input input {
-            margin-bottom: 0;
-        }
-
-        .input-label {
-            font-size: 0.85rem;
-            color: #888;
-            margin-left: 5px;
-            margin-bottom: 3px;
-        }
-
-        /* Buttons */
-        .btn {
-            width: 100%;
-            padding: 16px 30px;
-            border: none;
-            border-radius: 50px;
-            font-family: 'Baloo 2', cursive;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--coral), var(--peach));
-            color: white;
-            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.5);
-        }
-
-        .btn-primary:active {
-            transform: translateY(0);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--dark);
-            border: 2px solid #ddd;
-            margin-top: 10px;
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--sky);
-            color: var(--sky);
-        }
-
-        .btn-nav {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .btn-nav .btn {
-            flex: 1;
-        }
-
-        .btn-back {
-            background: #f0f0f0;
-            color: var(--dark);
-        }
-
-        .btn-back:hover {
-            background: #e0e0e0;
-        }
-
-        /* Welcome screen */
-        .welcome-title {
-            font-family: 'Baloo 2', cursive;
-            font-size: 2.2rem;
-            text-align: center;
-            color: var(--dark);
-            margin-bottom: 10px;
-        }
-
-        .welcome-subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-
-        .welcome-emoji {
-            font-size: 4rem;
-            text-align: center;
-            margin-bottom: 20px;
-            animation: wiggle 2s ease infinite;
-        }
-
-        @keyframes wiggle {
-            0%, 100% { transform: rotate(-5deg); }
-            50% { transform: rotate(5deg); }
-        }
-
-        /* Completion screen */
-        .completion {
-            text-align: center;
-        }
-
-        .completion-emoji {
-            font-size: 5rem;
-            margin-bottom: 20px;
-            animation: celebrate 1s ease infinite;
-        }
-
-        @keyframes celebrate {
-            0%, 100% { transform: scale(1) rotate(0deg); }
-            25% { transform: scale(1.1) rotate(-5deg); }
-            75% { transform: scale(1.1) rotate(5deg); }
-        }
-
-        .completion h2 {
-            color: var(--mint);
-            font-size: 1.8rem;
-        }
-
-        .completion p {
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .note-box {
-            background: linear-gradient(135deg, #fff9e6, #ffe4ec);
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px 0;
-            border-left: 4px solid var(--sunshine);
-        }
-
-        .note-box p {
-            margin: 0;
-            font-size: 0.95rem;
-            color: var(--dark);
-        }
-
-        /* Confetti */
-        .confetti {
-            position: fixed;
-            width: 10px;
-            height: 10px;
-            top: -10px;
-            z-index: 1000;
-            animation: confettiFall linear forwards;
-        }
-
-        @keyframes confettiFall {
-            to {
-                top: 100vh;
-                transform: rotate(720deg);
-            }
-        }
-
-        /* Hidden state */
-        .hidden {
-            display: none !important;
-        }
-
-        /* Loading spinner */
-        .spinner {
-            width: 40px;
-            height: 40px;
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid var(--coral);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 20px auto;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        /* Responsive */
-        @media (max-width: 420px) {
-            .card {
-                padding: 30px 20px;
-                border-radius: 25px;
-            }
-
-            h2 {
-                font-size: 1.3rem;
-            }
-
-            .welcome-title {
-                font-size: 1.8rem;
-            }
-
-            .emoji-header {
-                font-size: 2rem;
-            }
-        }
-
-        /* Category pill */
-        .category-pill {
-            display: inline-block;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 10px;
-        }
-
-        .category-reflect { background: #ffe4ec; color: var(--coral); }
-        .category-celebrate { background: #fff4d6; color: #d4a300; }
-        .category-grow { background: #d4f5e9; color: var(--mint); }
-        .category-dream { background: #e4e9ff; color: var(--sky); }
-
-        /* Time inputs */
-        .time-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-        }
-
-        .time-input-group {
-            background: #f8f9fa;
-            border-radius: 12px;
-            padding: 12px 15px;
-        }
-
-        .time-input-group label {
-            display: block;
-            font-size: 0.8rem;
-            color: var(--lavender);
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .time-input-group input {
-            margin-bottom: 0;
-            background: white;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Floating decorations -->
-    <div class="floater">✨</div>
-    <div class="floater">🌟</div>
-    <div class="floater">💫</div>
-    <div class="floater">⭐</div>
-    <div class="floater">🎉</div>
-    <div class="floater">🌈</div>
-
     <div class="container">
-        <!-- Welcome Screen -->
-        <div class="card" id="screen-welcome">
-            <div class="welcome-emoji">🎊</div>
-            <h1 class="welcome-title">2025 Retrospective</h1>
-            <p class="welcome-subtitle">
-                Take a moment to reflect on your journey through 2025 and set intentions for an amazing 2026! 🚀
-            </p>
-            <button class="btn btn-primary" onclick="startJourney()">Let's Begin! ✨</button>
-        </div>
+        <header class="header">
+            <a href="index.html" class="logo">
+                <span class="logo-mark"></span>
+                NobleNod
+            </a>
+        </header>
 
-        <!-- Identity -->
-        <div class="card hidden" id="screen-0">
-            <div class="progress-container">
-                <div class="progress-bar" style="width: 0%"></div>
-            </div>
-            <span class="emoji-header">👋</span>
-            <h2>First, let's get to know you!</h2>
-            <input type="text" id="name" placeholder="Your name" required>
-            <input type="email" id="email" placeholder="Your email" required>
-            <button class="btn btn-primary" onclick="nextScreen(1)">Continue →</button>
-        </div>
+        <section class="hero">
+            <h1>These students are getting <span class="accent">real interviews</span></h1>
+            <p class="hero-subtitle">No courses. No fees. Just a fair shot at getting hired. I screen you, vouch for you, and connect you with companies.</p>
+        </section>
 
-        <!-- Q1: Letting go -->
-        <div class="card hidden" id="screen-1">
-            <div class="progress-container">
-                <div class="progress-bar" style="width: 7%"></div>
+        <section class="section">
+            <div class="section-header">
+                <span class="section-title">Live Pipeline</span>
+                <span class="last-updated" id="lastUpdated">Last updated: Loading...</span>
             </div>
-            <div class="question-number"><span>1</span> of 14</div>
-            <span class="category-pill category-reflect">Reflect</span>
-            <span class="emoji-header">🎈</span>
-            <h2>What are you holding onto that you know you need to let go of?</h2>
-            <textarea id="q1" placeholder="Be honest with yourself..."></textarea>
-            <div class="btn-nav">
-                <button class="btn btn-back" onclick="prevScreen(0)">← Back</button>
-                <button class="btn btn-primary" onclick="nextScreen(2)">Next →</button>
-            </div>
-        </div>
+            <table class="pipeline-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>College</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="pipelineBody">
+                    <tr>
+                        <td colspan="3" style="text-align: center;">Loading pipeline data...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-        <!-- Q2: Habit burden -->
-        <div class="card hidden" id="screen-2">
-            <div class="progress-container">
-                <div class="progress-bar" style="width: 14%"></div>
-            </div>
-            <div class="question-number"><span>2</span> of 14</div>
-            <span class="category-pill category-reflect">Reflect</span>
-            <span class="emoji-header">⚖️</span>
-            <h2>What habit has slowly become a burden?</h2>
-            <textarea id="q2" placeholder="A habit that no longer serves you..."></textarea>
-            <div class="btn-nav">
-                <button class="btn btn-back" onclick="prevScreen(1)">← Back</button>
-                <button class="btn btn-primary" onclick="nextScreen(3)">Next →</button>
-            </div>
-        </div>
+        <section class="cta-section">
+            <h2>Want to be on this list?</h2>
+            <p>Fill out the form. I'll review your submission and get back to you.</p>
+            <a href="apply.html" class="btn btn-primary btn-lg">Apply Now</a>
+        </section>
 
-        <!-- Q3: Fear -->
-        <div class="card hidden" id="screen-3">
-            <div class="progress-container">
-                <div class="progress-bar" style="width: 21%"></div>
+        <section class="section">
+            <div class="stage-header">
+                <span class="stage-number">1</span>
+                <h2 class="stage-title">How to Enter the Pipeline</h2>
             </div>
-            <div class="question-number"><span>3</span> of 14</div>
-            <span class="category-pill category-reflect">Reflect</span>
-            <span class="emoji-header">😰</span>
-            <h2>What fear controlled you last year?</h2>
-            <textarea id="q3" placeholder="Name the fear..."></textarea>
-            <div class="btn-nav">
-                <button class="btn btn-back" onclick="prevScreen(2)">← Back</button>
-                <button class="btn btn-primary" onclick="nextScreen(4)">Next →</button>
+            <div class="stage-content">
+                <p><span class="highlight">Fill out the form.</span> It takes 5 minutes. I need your name, contact info, and a short description of a project you've built.</p>
+                <p><span class="highlight">Be honest.</span> I can spot AI-generated answers instantly. If you paste my questions into ChatGPT and send me the output, you're out. Write in your own words. Tell me what you actually built, what was hard, and what you learned.</p>
+                <p><span class="highlight">I respond to everyone.</span> Whether you move forward or not, you'll hear back from me. No ghosting. That's my commitment.</p>
+                <p><span class="highlight">What I'm looking for right now:</span> 2024/2025 graduates. Chennai-based or willing to relocate. If that's not you, I'll keep your info on file for future opportunities.</p>
             </div>
-        </div>
 
-        <!-- Q4: Feeling in the way -->
-        <div class="card hidden" id="screen-4">
-            <div class="progress-container">
-                <div class="progress-bar" style="width: 28%"></div>
+            <div class="nav-links">
+                <h3>Already in the pipeline? See what's next:</h3>
+                <ul>
+                    <li><a href="screening.html">Stage 2: Screening</a></li>
+                    <li><a href="technical-call.html">Stage 3: Technical Call</a></li>
+                    <li><a href="referred.html">Stage 4: Referred</a></li>
+                    <li><a href="interviewing.html">Stage 5: Interviewing</a></li>
+                    <li><a href="placed.html">Stage 6: Placed</a></li>
+                </ul>
             </div>
-            <div class="question-number"><span>4</span> of 14</div>
-            <span class="category-pill category-reflect">Reflect</span>
-            <span class="emoji-header">🌊</span>
-            <h2>What feeling keeps getting in your way?</h2>
-            <textarea id="q4" placeholder="That recurring emotion..."></textarea>
-            <div class="btn-nav">
-                <button class="btn btn-back" onclick="prevScreen(3)">← Back</button>
-                <button class="btn btn-primary" onclick="nextScreen(5)">Next →</button>
-            </div>
-        </div>
+        </section>
 
-        <!-- Q5: Proud of -->
-        <div class="card hidden" id="screen-5">
-            <div class="progress-container">
-                <div class="progress-bar" style="width: 35%"></div>
+        <section class="about-section">
+            <h2>Who's behind this?</h2>
+            <p>I'm Hari. I spent 16 years in tech, including 8 years at Amazon where I conducted 100+ technical interviews. I know what gets candidates hired, and I know how the current system fails genuinely skilled students.</p>
+            <p>I'm not running a course. I'm not selling coaching. I'm connecting skilled freshers with startups that are actually hiring. When I send your profile to a company, it comes with my personal recommendation. That means something.</p>
+            <div class="credentials">
+                <span class="credential"><span class="credential-icon"></span>Ex-Amazon SDE</span>
+                <span class="credential"><span class="credential-icon"></span>16 years in tech</span>
+                <span class="credential"><span class="credential-icon"></span>100+ technical interviews</span>
+                <span class="credential"><span class="credential-icon"></span>MS in AI, Northeastern</span>
             </div>
-            <div class="question-number"><span>5</span> of 14</div>
-            <span class="category-pill category-celebrate">Celebrate</span>
-            <span class="emoji-header">🏆</span>
-            <h2>One thing you're proud of from 2025!</h2>
-            <textarea id="q5" placeholder="Celebrate your win..."></textarea>
-            <div class="btn-nav">
-                <button class="btn btn-back" onclick="prevScreen(4)">← Back</button>
-                <button class="btn btn-primary" onclick="nextScreen(6)">Next →</button>
-            </div>
-        </div>
+        </section>
 
-        <!-- Q6: Positive influence -->
-        <div class="card hidden" id="screen-6">
-            <div class="progress-container">
-                <div class="progress-bar" style="width: 42%"></div>
-            </div>
-            <div class="question-number"><span>6</span> of 14</div>
-            <span class="category-pill category-celebrate">Celebrate</span>
-            <span class="emoji-header">💖</span>
-            <h2>Who or what was a positive influence on you in 2025?</h2>
-            <textarea id="q6" placeholder="A person, book, experience..."></textarea>
-            <div class="btn-nav">
-                <button class="btn btn-back" onclick="prevScreen(5)">← Back</button>
-                <button class="btn btn-primary" onclick="nextScreen(7)">Next →</button>
-            </div>
-        </div>
-
-        <!-- Q7: Secret strength -->
-        <div class="card hidden" id="screen-7">
-            <div class="progress-container">
-                <div class="progress-bar" style="width: 49%"></div>
-            </div>
-            <div class="question-number"><span>7</span> of 14</div>
-            <span class="category-pill category-celebrate">Celebrate</span>
-            <span class="emoji-header">💪</span>
-            <h2>What's your secret source of strength?</h2>
-            <textarea id="q7" placeholder="What keeps you going..."></textarea>
-            <div class="btn-nav">
-                <button class="btn btn-back" onclick="prevScreen(6)">← Back</button>
-                <button class="btn btn-primary" onclick="nextScreen(8)">Next →</button>
-            </div>
-        </div>
-
-        <!-- Q8: Started earlier -->
-        <div class="card hidden" id="screen-8">
-            <div class="progress-container">
-                <div class="progress-bar" style="width: 56%"></div>
-            </div>
-            <div class="question-number"><span>8</span> of 14</div>
-            <span class="category-pill category-grow">Grow</span>
-            <span class="emoji-header">⏰</span>
-            <h2>What's one thing you wish you had started earlier?</h2>
-            <textarea id="q8" placeholder="That thing you kept postponing..."></textarea>
-            <div class="btn-nav">
-                <button class="btn btn-back" onclick="prevScreen(7)">← Back</button>
-                <button class="btn btn-primary" onclick="nextScreen(9)">Next →</button>
-            </div>
-        </div>
-
-        <!-- Q9: Health goals -->
-        <div class="card hidden" id="screen-9">
-            <div class="progress-container">
-                <div class="progress-bar" style="width: 63%"></div>
-            </div>
-            <div class="question-number"><span>9</span> of 14</div>
-            <span class="category-pill category-grow">Grow</span>
-            <span class="emoji-header">🌿</span>
-            <h2>3 health goals for 2026</h2>
-            <div class="multi-input">
-                <div>
-                    <div class="input-label">Goal 1</div>
-                    <input type="text" id="health1" placeholder="First health goal">
-                </div>
-                <div>
-                    <div class="input-label">Goal 2</div>
-                    <input type="text" id="health2" placeholder="Second health goal">
-                </div>
-                <div>
-                    <div class="input-label">Goal 3</div>
-                    <input type="text" id="health3" placeholder="Third health goal">
-                </div>
-            </div>
-            <div class="btn-nav">
-                <button class="btn btn-back" onclick="prevScreen(8)">← Back</button>
-                <button class="btn btn-primary" onclick="nextScreen(10)">Next →</button>
-            </div>
-        </div>
-
-        <!-- Q10: Skills/hobbies -->
-        <div class="card hidden" id="screen-10">
-            <div class="progress-container">
-                <div class="progress-bar" style="width: 70%"></div>
-            </div>
-            <div class="question-number"><span>10</span> of 14</div>
-            <span class="category-pill category-dream">Dream</span>
-            <span class="emoji-header">🎨</span>
-            <h2>Skills or hobbies you want to explore for fun!</h2>
-            <textarea id="q10" placeholder="Things that excite you..."></textarea>
-            <div class="btn-nav">
-                <button class="btn btn-back" onclick="prevScreen(9)">← Back</button>
-                <button class="btn btn-primary" onclick="nextScreen(11)">Next →</button>
-            </div>
-        </div>
-
-        <!-- Q11: Places -->
-        <div class="card hidden" id="screen-11">
-            <div class="progress-container">
-                <div class="progress-bar" style="width: 77%"></div>
-            </div>
-            <div class="question-number"><span>11</span> of 14</div>
-            <span class="category-pill category-dream">Dream</span>
-            <span class="emoji-header">🗺️</span>
-            <h2>3 places you want to visit</h2>
-            <div class="multi-input">
-                <div>
-                    <div class="input-label">Place 1</div>
-                    <input type="text" id="place1" placeholder="Dream destination">
-                </div>
-                <div>
-                    <div class="input-label">Place 2</div>
-                    <input type="text" id="place2" placeholder="Another place">
-                </div>
-                <div>
-                    <div class="input-label">Place 3</div>
-                    <input type="text" id="place3" placeholder="One more spot">
-                </div>
-            </div>
-            <div class="btn-nav">
-                <button class="btn btn-back" onclick="prevScreen(10)">← Back</button>
-                <button class="btn btn-primary" onclick="nextScreen(12)">Next →</button>
-            </div>
-        </div>
-
-        <!-- Q12: Goals this year -->
-        <div class="card hidden" id="screen-12">
-            <div class="progress-container">
-                <div class="progress-bar" style="width: 84%"></div>
-            </div>
-            <div class="question-number"><span>12</span> of 14</div>
-            <span class="category-pill category-dream">Dream</span>
-            <span class="emoji-header">🎯</span>
-            <h2>3 goals for 2026</h2>
-            <div class="multi-input">
-                <div>
-                    <div class="input-label">Goal 1</div>
-                    <input type="text" id="goal1" placeholder="Your first goal">
-                </div>
-                <div>
-                    <div class="input-label">Goal 2</div>
-                    <input type="text" id="goal2" placeholder="Your second goal">
-                </div>
-                <div>
-                    <div class="input-label">Goal 3</div>
-                    <input type="text" id="goal3" placeholder="Your third goal">
-                </div>
-            </div>
-            <div class="btn-nav">
-                <button class="btn btn-back" onclick="prevScreen(11)">← Back</button>
-                <button class="btn btn-primary" onclick="nextScreen(13)">Next →</button>
-            </div>
-        </div>
-
-        <!-- Q13: Day/Week/Month -->
-        <div class="card hidden" id="screen-13">
-            <div class="progress-container">
-                <div class="progress-bar" style="width: 91%"></div>
-            </div>
-            <div class="question-number"><span>13</span> of 14</div>
-            <span class="category-pill category-dream">Dream</span>
-            <span class="emoji-header">📅</span>
-            <h2>What do you want to accomplish in...</h2>
-            <div class="time-grid">
-                <div class="time-input-group">
-                    <label>A Day</label>
-                    <input type="text" id="day" placeholder="Daily intention">
-                </div>
-                <div class="time-input-group">
-                    <label>A Week</label>
-                    <input type="text" id="week" placeholder="Weekly win">
-                </div>
-                <div class="time-input-group">
-                    <label>A Month</label>
-                    <input type="text" id="month" placeholder="Monthly milestone">
-                </div>
-            </div>
-            <div class="btn-nav">
-                <button class="btn btn-back" onclick="prevScreen(12)">← Back</button>
-                <button class="btn btn-primary" onclick="nextScreen(14)">Next →</button>
-            </div>
-        </div>
-
-        <!-- Q14: Reminder when stuck -->
-        <div class="card hidden" id="screen-14">
-            <div class="progress-container">
-                <div class="progress-bar" style="width: 98%"></div>
-            </div>
-            <div class="question-number"><span>14</span> of 14</div>
-            <span class="category-pill category-grow">Grow</span>
-            <span class="emoji-header">🌟</span>
-            <h2>When you feel stuck, remind yourself...</h2>
-            <textarea id="q14" placeholder="Your personal mantra..."></textarea>
-            <div class="btn-nav">
-                <button class="btn btn-back" onclick="prevScreen(13)">← Back</button>
-                <button class="btn btn-primary" onclick="submitForm()">Submit ✨</button>
-            </div>
-        </div>
-
-        <!-- Loading screen -->
-        <div class="card hidden" id="screen-loading">
-            <div class="completion">
-                <span class="emoji-header">🚀</span>
-                <h2>Saving your reflections...</h2>
-                <div class="spinner"></div>
-            </div>
-        </div>
-
-        <!-- Completion Screen -->
-        <div class="card hidden" id="screen-complete">
-            <div class="completion">
-                <span class="completion-emoji">🎉</span>
-                <h2>You did it!</h2>
-                <p>Thank you for sharing your reflections! Your responses have been saved.</p>
-                <div class="note-box">
-                    <p>📬 <strong>Hari will share your responses with you next year</strong> so you can see how far you've come!</p>
-                </div>
-                <p>Here's to an amazing 2026! 🥳</p>
-                <button class="btn btn-primary" onclick="shareOnWhatsApp()">Share with Friends 💚</button>
-            </div>
-        </div>
+        <footer class="footer">
+            <p>Questions? <a href="mailto:hari@industryready.io">Email me</a> · <a href="https://linkedin.com/in/noblenod" target="_blank">LinkedIn</a></p>
+        </footer>
     </div>
 
-    <!-- Hidden iframe for form submission (bypasses CORS) -->
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-
     <script>
-        // ============================================================
-        // Your Google Apps Script Web App URL
-        // ============================================================
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxeW7q6gF7DE8RwQb3m7cj7joXrSlAB7FfGgcO-CygG7NDOSQfRvLFSKdJToh2LJCMD/exec';
-        // ============================================================
-        
-        let currentScreen = 'welcome';
+        // Pipeline data is loaded from pipeline.json in the same directory
+        const PIPELINE_DATA_URL = 'pipeline.json';
 
-        function startJourney() {
-            transitionTo('0');
+        // Status to badge class mapping
+        function getStatusClass(status) {
+            const activeStatuses = ['call_scheduled', 'referred', 'tracking_with_company', 'interview_scheduled', 'placed'];
+            const waitingStatuses = ['checking_relocation', 'checking_graduation', 'awaiting_response', 'rewrite_requested'];
+            const reviewStatuses = ['under_review'];
+            const notfitStatuses = ['not_a_fit_still_in_college', 'not_a_fit_experienced', 'not_a_fit_location', 'ghosted', 'call_completed_fail', 'rejected_by_company'];
+
+            if (activeStatuses.includes(status)) return 'active';
+            if (waitingStatuses.includes(status)) return 'waiting';
+            if (reviewStatuses.includes(status)) return 'review';
+            if (notfitStatuses.includes(status)) return 'notfit';
+            return 'review';
         }
 
-        function transitionTo(screenId) {
-            const currentCard = document.getElementById(`screen-${currentScreen}`);
-            const nextCard = document.getElementById(`screen-${screenId}`);
+        // Fetch and render pipeline data
+        async function loadPipelineData() {
+            try {
+                const response = await fetch(PIPELINE_DATA_URL);
+                const data = await response.json();
 
-            currentCard.classList.add('exit');
-            
-            setTimeout(() => {
-                currentCard.classList.add('hidden');
-                currentCard.classList.remove('exit');
-                nextCard.classList.remove('hidden');
-                currentScreen = screenId;
-                
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }, 400);
-        }
+                // Update last updated
+                document.getElementById('lastUpdated').textContent = `Last updated: ${data.lastUpdated}`;
 
-        function nextScreen(screenNum) {
-            if (currentScreen === '0') {
-                const name = document.getElementById('name').value.trim();
-                const email = document.getElementById('email').value.trim();
-                if (!name || !email) {
-                    alert('Please fill in your name and email to continue! 😊');
-                    return;
-                }
-            }
-            transitionTo(screenNum.toString());
-        }
+                // Render table
+                const tbody = document.getElementById('pipelineBody');
+                tbody.innerHTML = data.candidates.map(candidate => `
+                    <tr>
+                        <td class="candidate-name">${candidate.name}</td>
+                        <td class="candidate-college">${candidate.college}</td>
+                        <td><span class="status-badge ${getStatusClass(candidate.status)}">${candidate.statusDisplay}</span></td>
+                    </tr>
+                `).join('');
 
-        function prevScreen(screenNum) {
-            transitionTo(screenNum.toString());
-        }
-
-        function collectData() {
-            return {
-                timestamp: new Date().toLocaleString(),
-                name: document.getElementById('name').value.trim(),
-                email: document.getElementById('email').value.trim(),
-                q1_letting_go: document.getElementById('q1').value.trim(),
-                q2_burden_habit: document.getElementById('q2').value.trim(),
-                q3_fear: document.getElementById('q3').value.trim(),
-                q4_feeling_in_way: document.getElementById('q4').value.trim(),
-                q5_proud_of: document.getElementById('q5').value.trim(),
-                q6_positive_influence: document.getElementById('q6').value.trim(),
-                q7_secret_strength: document.getElementById('q7').value.trim(),
-                q8_started_earlier: document.getElementById('q8').value.trim(),
-                q9_health_goals: [
-                    document.getElementById('health1').value.trim(),
-                    document.getElementById('health2').value.trim(),
-                    document.getElementById('health3').value.trim()
-                ].filter(g => g).join(' | '),
-                q10_skills_hobbies: document.getElementById('q10').value.trim(),
-                q11_places: [
-                    document.getElementById('place1').value.trim(),
-                    document.getElementById('place2').value.trim(),
-                    document.getElementById('place3').value.trim()
-                ].filter(p => p).join(' | '),
-                q12_goals: [
-                    document.getElementById('goal1').value.trim(),
-                    document.getElementById('goal2').value.trim(),
-                    document.getElementById('goal3').value.trim()
-                ].filter(g => g).join(' | '),
-                q13_day: document.getElementById('day').value.trim(),
-                q13_week: document.getElementById('week').value.trim(),
-                q13_month: document.getElementById('month').value.trim(),
-                q14_reminder: document.getElementById('q14').value.trim()
-            };
-        }
-
-        function submitForm() {
-            const data = collectData();
-            
-            // DEBUG: Log what we're collecting
-            console.log('=== FORM DATA DEBUG ===');
-            console.log('Full data object:', data);
-            for (const [key, value] of Object.entries(data)) {
-                console.log(`${key}: "${value}"`);
-            }
-            console.log('=== END DEBUG ===');
-            
-            transitionTo('loading');
-
-            // Create a hidden form and submit it to the iframe
-            // This bypasses CORS because form submissions are allowed cross-origin
-            const form = document.createElement('form');
-            form.method = 'POST';
-            form.action = GOOGLE_SCRIPT_URL;
-            form.target = 'hidden_iframe';
-            
-            for (const [key, value] of Object.entries(data)) {
-                const input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = key;
-                input.value = value;
-                form.appendChild(input);
-            }
-            
-            document.body.appendChild(form);
-            form.submit();
-            document.body.removeChild(form);
-
-            // Show success after delay (form submission doesn't give us a callback)
-            setTimeout(() => {
-                transitionTo('complete');
-                launchConfetti();
-            }, 2500);
-        }
-
-        function launchConfetti() {
-            const colors = ['#FF6B6B', '#FFD93D', '#6BCB77', '#4D96FF', '#9B59B6', '#FF69B4'];
-            
-            for (let i = 0; i < 100; i++) {
-                setTimeout(() => {
-                    const confetti = document.createElement('div');
-                    confetti.className = 'confetti';
-                    confetti.style.left = Math.random() * 100 + 'vw';
-                    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
-                    confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
-                    confetti.style.width = (Math.random() * 10 + 5) + 'px';
-                    confetti.style.height = confetti.style.width;
-                    confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
-                    document.body.appendChild(confetti);
-                    
-                    setTimeout(() => confetti.remove(), 4000);
-                }, i * 30);
+            } catch (error) {
+                console.error('Error loading pipeline data:', error);
+                document.getElementById('pipelineBody').innerHTML = `
+                    <tr>
+                        <td colspan="3" style="text-align: center;">Unable to load pipeline data. Please refresh.</td>
+                    </tr>
+                `;
             }
         }
 
-        function shareOnWhatsApp() {
-            const text = encodeURIComponent(
-                "✨ I just completed my 2025 Retrospective! ✨\n\n" +
-                "Take a moment to reflect on your year and set intentions for 2026! 🎯\n\n" +
-                "👉 " + window.location.href
-            );
-            window.open(`https://wa.me/?text=${text}`, '_blank');
-        }
+        // Load data on page load
+        document.addEventListener('DOMContentLoaded', loadPipelineData);
     </script>
 </body>
 </html>

@@ -1,0 +1,83 @@
+{
+  "lastUpdated": "2025-01-22",
+  "candidates": [
+    {
+      "name": "Sh***",
+      "college": "UPES Dehradun",
+      "status": "rewrite_requested",
+      "statusDisplay": "Rewrite requested"
+    },
+    {
+      "name": "Ab***",
+      "college": "C. Abdul Hakeem College",
+      "status": "rewrite_requested",
+      "statusDisplay": "Rewrite requested"
+    },
+    {
+      "name": "Pa***",
+      "college": "Amrita Vishwa Vidyapeetham",
+      "status": "call_scheduled",
+      "statusDisplay": "Technical call scheduled"
+    },
+    {
+      "name": "Am***",
+      "college": "IGNOU",
+      "status": "not_a_fit_still_in_college",
+      "statusDisplay": "Not a fit - still in college"
+    },
+    {
+      "name": "Ta***",
+      "college": "GCE Jalgaon",
+      "status": "call_scheduled",
+      "statusDisplay": "Technical call scheduled"
+    },
+    {
+      "name": "Va***",
+      "college": "Ujjain Engineering College",
+      "status": "checking_relocation",
+      "statusDisplay": "Checking relocation"
+    },
+    {
+      "name": "Na***",
+      "college": "UCE Tindivanam",
+      "status": "not_a_fit_still_in_college",
+      "statusDisplay": "Not a fit - still in college"
+    },
+    {
+      "name": "Go***",
+      "college": "Dr. MGR Educational and Research Institute",
+      "status": "not_a_fit_still_in_college",
+      "statusDisplay": "Not a fit - still in college"
+    },
+    {
+      "name": "Sa***",
+      "college": "G. H. Raisoni College of Engineering",
+      "status": "checking_relocation",
+      "statusDisplay": "Checking relocation"
+    },
+    {
+      "name": "Ni***",
+      "college": "SOIT, RGPV Bhopal",
+      "status": "awaiting_response",
+      "statusDisplay": "Awaiting response"
+    },
+    {
+      "name": "An***",
+      "college": "IIIT UNA",
+      "status": "awaiting_response",
+      "statusDisplay": "Awaiting response"
+    },
+    {
+      "name": "Sa***",
+      "college": "Manakula Vinayagar Institute",
+      "status": "under_review",
+      "statusDisplay": "Under review"
+    },
+    {
+      "name": "Ch***",
+      "college": "Panimalar Institute of Technology",
+      "status": "under_review",
+      "statusDisplay": "Under review"
+    }
+  ]
+}

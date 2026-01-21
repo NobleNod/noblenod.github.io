@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply | NobleNod</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .form-container {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .form-container iframe {
+            width: 100%;
+            height: 1200px;
+            border: none;
+            display: block;
+        }
+
+        .form-note {
+            background: var(--color-primary-light);
+            border: 1px solid var(--color-primary);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md) var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+            font-size: var(--text-sm);
+            color: var(--color-text-primary);
+        }
+
+        .form-note strong {
+            color: var(--color-primary);
+        }
+
+        .form-fallback {
+            display: none;
+            text-align: center;
+            padding: var(--spacing-2xl);
+        }
+
+        .form-fallback p {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        @media (max-width: 768px) {
+            .form-container iframe {
+                height: 1400px;
+            }
+
+            .form-note {
+                padding: var(--spacing-sm) var(--spacing-md);
+                font-size: var(--text-xs);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .form-container {
+                border-radius: var(--radius-md);
+                margin-bottom: var(--spacing-lg);
+            }
+
+            .form-container iframe {
+                height: 1600px;
+            }
+
+            .form-note {
+                padding: var(--spacing-sm);
+                font-size: var(--text-xs);
+                border-radius: var(--radius-sm);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-nav">
+                <a href="index.html" class="logo">
+                    <span class="logo-mark"></span>
+                    NobleNod
+                </a>
+                <a href="index.html" class="back-link">← Back to Pipeline</a>
+            </div>
+        </header>
+
+        <section class="hero">
+            <h1>Apply to <span class="accent">NobleNod</span></h1>
+            <p class="hero-subtitle">Fill out the form below. It takes 5 minutes. I'll review your submission and get back to you within 48 hours.</p>
+        </section>
+
+        <div class="form-note">
+            <strong>Before you start:</strong> I can spot AI-generated answers instantly. Write in your own words. Tell me what you actually built, what was hard, and what you learned. Honesty beats polish every time.
+        </div>
+
+        <div class="form-container">
+            <iframe 
+                src="https://docs.google.com/forms/d/e/1FAIpQLSf8Z6Z8Z6Z8Z6Z8Z6Z8Z6Z8Z6Z8Z6Z8Z6/viewform?embedded=true"
+                title="NobleNod Application Form"
+                loading="lazy">
+                Loading form...
+            </iframe>
+        </div>
+
+        <section class="section">
+            <h2 class="section-heading"><span class="section-icon">❓</span> What happens after I submit?</h2>
+            
+            <div class="card">
+                <h3>I review your submission</h3>
+                <p>I personally look at every form. I'm checking if you've built something real and can explain it honestly. College name and GPA don't matter. What you've done and how you think does.</p>
+            </div>
+
+            <div class="card">
+                <h3>You'll hear back within 48 hours</h3>
+                <p>Whether you move forward or not, I'll email you. If I need clarification, I'll ask. If you're not a fit for the current role, I'll tell you why and keep you on file for future opportunities.</p>
+            </div>
+
+            <div class="card success">
+                <h3>If you qualify, we schedule a call</h3>
+                <p>A 45-60 minute technical call where I dig into your projects and have you solve a problem or two. If you pass, I refer you directly to the company with my personal recommendation.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="nav-links">
+                <h3>Want to know more about the process?</h3>
+                <ul>
+                    <li><a href="screening.html">Stage 2: Screening</a></li>
+                    <li><a href="technical-call.html">Stage 3: Technical Call</a></li>
+                    <li><a href="referred.html">Stage 4: Referred</a></li>
+                    <li><a href="interviewing.html">Stage 5: Interviewing</a></li>
+                    <li><a href="placed.html">Stage 6: Placed</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Questions? <a href="mailto:hari@industryready.io">Email me</a> · <a href="https://linkedin.com/in/noblenod" target="_blank">LinkedIn</a></p>
+        </footer>
+    </div>
+</body>
+</html>
