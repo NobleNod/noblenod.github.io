@@ -384,14 +384,18 @@ a:hover {
 }
 
 /* ---------- Pipeline Table ---------- */
+.table-container {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
 .pipeline-table {
     width: 100%;
     border-collapse: collapse;
     background: var(--color-bg-card);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    border: 1px solid var(--color-border);
-    box-shadow: var(--shadow-sm);
 }
 
 .pipeline-table th,
@@ -408,6 +412,9 @@ a:hover {
     letter-spacing: 0.05em;
     color: var(--color-text-muted);
     border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 .pipeline-table td {
@@ -942,6 +949,13 @@ a:hover {
     }
 
     /* Pipeline Table - Card Layout on Mobile */
+    .table-container {
+        max-height: 350px;
+        border: none;
+        box-shadow: none;
+        overflow-y: auto;
+    }
+
     .pipeline-table {
         display: block;
     }

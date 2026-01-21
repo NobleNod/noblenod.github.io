@@ -23,7 +23,7 @@
       "name": "Am***",
       "college": "IGNOU",
       "status": "not_a_fit_still_in_college",
-      "statusDisplay": "Not a fit - still in college"
+      "statusDisplay": "Awaiting graduation"
     },
     {
       "name": "Ta***",
@@ -41,13 +41,13 @@
       "name": "Na***",
       "college": "UCE Tindivanam",
       "status": "not_a_fit_still_in_college",
-      "statusDisplay": "Not a fit - still in college"
+      "statusDisplay": "Awaiting graduation"
     },
     {
       "name": "Go***",
       "college": "Dr. MGR Educational and Research Institute",
       "status": "not_a_fit_still_in_college",
-      "statusDisplay": "Not a fit - still in college"
+      "statusDisplay": "Awaiting graduation"
     },
     {
       "name": "Sa***",
