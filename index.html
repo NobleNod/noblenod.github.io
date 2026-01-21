@@ -97,18 +97,47 @@
         // Pipeline data is loaded from pipeline.json in the same directory
         const PIPELINE_DATA_URL = 'pipeline.json';
 
+        // Status enum to display text mapping
+        const STATUS_DISPLAY = {
+            'under_review': 'Under review',
+            'rewrite_requested': 'Rewrite requested',
+            'checking_relocation': 'Checking relocation',
+            'checking_graduation': 'Checking graduation',
+            'awaiting_response': 'Awaiting response',
+            'awaiting_graduation': 'Awaiting graduation',
+            'call_scheduled': 'Technical call scheduled',
+            'call_completed_pass': 'Passed technical call',
+            'call_completed_fail': 'Did not pass',
+            'referred': 'Referred to company',
+            'tracking_with_company': 'Tracking with company',
+            'company_reviewing': 'Company reviewing',
+            'interview_scheduled': 'Interview scheduled',
+            'interview_completed': 'Interview completed',
+            'placed': 'Placed',
+            'rejected_by_company': 'Not selected',
+            'not_a_fit_experienced': 'Too experienced',
+            'not_a_fit_location': 'Location mismatch',
+            'ghosted': 'No response',
+            'withdrew': 'Withdrew'
+        };
+
         // Status to badge class mapping
         function getStatusClass(status) {
-            const activeStatuses = ['call_scheduled', 'referred', 'tracking_with_company', 'interview_scheduled', 'placed'];
-            const waitingStatuses = ['checking_relocation', 'checking_graduation', 'awaiting_response', 'rewrite_requested'];
-            const reviewStatuses = ['under_review'];
-            const notfitStatuses = ['not_a_fit_still_in_college', 'not_a_fit_experienced', 'not_a_fit_location', 'ghosted', 'call_completed_fail', 'rejected_by_company'];
+            const activeStatuses = ['call_scheduled', 'referred', 'tracking_with_company', 'interview_scheduled', 'placed', 'call_completed_pass'];
+            const waitingStatuses = ['checking_relocation', 'checking_graduation', 'awaiting_response', 'rewrite_requested', 'awaiting_graduation'];
+            const reviewStatuses = ['under_review', 'company_reviewing', 'interview_completed'];
+            const notfitStatuses = ['not_a_fit_experienced', 'not_a_fit_location', 'ghosted', 'call_completed_fail', 'rejected_by_company', 'withdrew'];
 
             if (activeStatuses.includes(status)) return 'active';
             if (waitingStatuses.includes(status)) return 'waiting';
             if (reviewStatuses.includes(status)) return 'review';
             if (notfitStatuses.includes(status)) return 'notfit';
             return 'review';
+        }
+
+        // Get display text for status
+        function getStatusDisplay(status) {
+            return STATUS_DISPLAY[status] || status;
         }
 
         // Fetch and render pipeline data
@@ -126,7 +155,7 @@
                     <tr>
                         <td class="candidate-name">${candidate.name}</td>
                         <td class="candidate-college">${candidate.college}</td>
-                        <td><span class="status-badge ${getStatusClass(candidate.status)}">${candidate.statusDisplay}</span></td>
+                        <td><span class="status-badge ${getStatusClass(candidate.status)}">${getStatusDisplay(candidate.status)}</span></td>
                     </tr>
                 `).join('');
 
