@@ -48,6 +48,7 @@
                 <table class="pipeline-table">
                     <thead>
                         <tr>
+                            <th>#</th>
                             <th>Name</th>
                             <th>College</th>
                             <th>Status</th>
@@ -55,7 +56,7 @@
                     </thead>
                     <tbody id="pipelineBody">
                         <tr>
-                            <td colspan="3" style="text-align: center;">Loading pipeline data...</td>
+                            <td colspan="4" style="text-align: center;">Loading pipeline data...</td>
                         </tr>
                     </tbody>
                 </table>
@@ -121,6 +122,7 @@
             'checking_graduation': 'Checking graduation',
             'awaiting_response': 'Awaiting response',
             'awaiting_graduation': 'Awaiting graduation',
+            'scheduling_call': 'Scheduling call',
             'call_scheduled': 'Technical call scheduled',
             'call_completed_pass': 'Passed technical call',
             'call_completed_fail': 'Did not pass',
@@ -139,7 +141,7 @@
 
         // Status to badge class mapping
         function getStatusClass(status) {
-            const activeStatuses = ['call_scheduled', 'referred', 'tracking_with_company', 'interview_scheduled', 'placed', 'call_completed_pass'];
+            const activeStatuses = ['scheduling_call', 'call_scheduled', 'referred', 'tracking_with_company', 'interview_scheduled', 'placed', 'call_completed_pass'];
             const waitingStatuses = ['checking_relocation', 'checking_graduation', 'awaiting_response', 'rewrite_requested', 'awaiting_graduation'];
             const reviewStatuses = ['under_review', 'company_reviewing', 'interview_completed'];
             const notfitStatuses = ['not_a_fit_experienced', 'not_a_fit_location', 'ghosted', 'call_completed_fail', 'rejected_by_company', 'withdrew'];
@@ -169,6 +171,7 @@
                 const tbody = document.getElementById('pipelineBody');
                 tbody.innerHTML = data.candidates.map(candidate => `
                     <tr>
+                        <td>${candidate.number}</td>
                         <td class="candidate-name">${candidate.name}</td>
                         <td class="candidate-college">${candidate.college}</td>
                         <td><span class="status-badge ${getStatusClass(candidate.status)}">${getStatusDisplay(candidate.status)}</span></td>
@@ -179,7 +182,7 @@
                 console.error('Error loading pipeline data:', error);
                 document.getElementById('pipelineBody').innerHTML = `
                     <tr>
-                        <td colspan="3" style="text-align: center;">Unable to load pipeline data. Please refresh.</td>
+                        <td colspan="4" style="text-align: center;">Unable to load pipeline data. Please refresh.</td>
                     </tr>
                 `;
             }
