@@ -975,10 +975,11 @@ a:hover {
 
     /* Pipeline Table - Card Layout on Mobile */
     .table-container {
-        max-height: 400px;
+        max-height: 370px; /* Intentionally cuts off ~4th card mid-way to signal scrollability */
         border: none;
         box-shadow: none;
-        overflow-y: auto;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
     }
 
     .pipeline-table {
