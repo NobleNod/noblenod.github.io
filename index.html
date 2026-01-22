@@ -24,123 +24,6 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
-        <style>
-            /* Desktop: compact table */
-            .pipeline-table {
-                font-size: 0.85rem;
-            }
-            
-            .pipeline-table th,
-            .pipeline-table td {
-                padding: 0.5rem 0.6rem;
-            }
-            
-            .pipeline-table th {
-                font-size: 0.75rem;
-                text-transform: uppercase;
-                letter-spacing: 0.03em;
-            }
-            
-            .pipeline-table .status-badge {
-                font-size: 0.7rem;
-                padding: 0.15rem 0.4rem;
-            }
-            
-            @media (min-width: 769px) {
-                .mobile-row-1,
-                .mobile-row-2 {
-                    display: none !important;
-                }
-                
-                .desktop-cell {
-                    display: table-cell;
-                }
-            }
-            
-            /* Mobile card layout */
-            @media (max-width: 768px) {
-                .pipeline-table {
-                    border-collapse: separate;
-                    border-spacing: 0 0.5rem;
-                }
-                
-                .pipeline-table thead {
-                    display: none;
-                }
-                
-                .pipeline-table tbody {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 0.5rem;
-                }
-                
-                .pipeline-table tr {
-                    display: flex;
-                    flex-direction: column;
-                    background: var(--bg-card, #1a1a1a);
-                    border: 1px solid var(--border, #2a2a2a);
-                    border-radius: 8px;
-                    padding: 0.75rem;
-                }
-                
-                .pipeline-table td {
-                    padding: 0;
-                    border: none;
-                }
-                
-                /* Hide desktop cells on mobile */
-                .desktop-cell {
-                    display: none !important;
-                }
-                
-                /* Show mobile rows */
-                .mobile-row-1,
-                .mobile-row-2 {
-                    display: flex !important;
-                    width: 100%;
-                }
-                
-                .mobile-row-1 {
-                    align-items: center;
-                    gap: 0.5rem;
-                    margin-bottom: 0.35rem;
-                    flex-wrap: wrap;
-                }
-                
-                .mobile-row-1 .candidate-number {
-                    color: var(--text-muted, #666);
-                    font-size: 0.85rem;
-                    min-width: 20px;
-                }
-                
-                .mobile-row-1 .candidate-name {
-                    font-weight: 600;
-                }
-                
-                .mobile-row-1 .candidate-state {
-                    color: var(--text-secondary, #a0a0a0);
-                    font-size: 0.85rem;
-                }
-                
-                .mobile-row-1 .candidate-state::before {
-                    content: "·";
-                    margin-right: 0.5rem;
-                }
-                
-                .mobile-row-1 .status-badge {
-                    margin-left: auto;
-                    font-size: 0.7rem;
-                    padding: 0.15rem 0.4rem;
-                    white-space: nowrap;
-                }
-                
-                .mobile-row-2 {
-                    color: var(--text-secondary, #a0a0a0);
-                    font-size: 0.8rem;
-                    padding-left: 20px;
-                }
-            }
-        </style>
     </head>
 <body>
     <div class="container">
@@ -207,6 +90,7 @@
                     <li><a href="referred.html">Stage 4: Referred</a></li>
                     <li><a href="interviewing.html">Stage 5: Interviewing</a></li>
                     <li><a href="placed.html">Stage 6: Placed</a></li>
+                    <li><a href="awaiting-match.html">Awaiting Match</a></li>
                 </ul>
             </div>
         </section>
@@ -234,35 +118,21 @@
 
         // Status enum to display text mapping
         const STATUS_DISPLAY = {
-            'under_review': 'Under review',
-            'rewrite_requested': 'Rewrite requested',
-            'awaiting_response': 'Awaiting response',
-            'checking_relocation': 'Checking relocation',
-            'awaiting_graduation': 'Awaiting graduation',
-            'scheduling_call': 'Scheduling call',
-            'call_scheduled': 'Call scheduled',
-            'call_completed_pass': 'Passed technical call',
-            'call_completed_fail': 'Did not pass',
-            'referred': 'Referred to company',
-            'tracking_with_company': 'Tracking with company',
-            'interview_scheduled': 'Interview scheduled',
+            'screening': 'Screening',
+            'technical_call': 'Technical Call',
+            'referred': 'Referred',
+            'interviewing': 'Interviewing',
             'placed': 'Placed',
-            'closed': 'Closed',
-            'ghosted': 'No response',
-            'withdrew': 'Withdrew'
+            'awaiting_match': 'Awaiting Match'
         };
 
         // Status to badge class mapping
         function getStatusClass(status) {
-            const activeStatuses = ['scheduling_call', 'call_scheduled', 'referred', 'tracking_with_company', 'interview_scheduled', 'placed', 'call_completed_pass'];
-            const waitingStatuses = ['checking_relocation', 'awaiting_response', 'rewrite_requested', 'awaiting_graduation'];
-            const reviewStatuses = ['under_review'];
-            const notfitStatuses = ['closed', 'ghosted', 'call_completed_fail', 'withdrew'];
+            const activeStatuses = ['technical_call', 'referred', 'interviewing', 'placed'];
+            const waitingStatuses = ['screening', 'awaiting_match'];
 
             if (activeStatuses.includes(status)) return 'active';
             if (waitingStatuses.includes(status)) return 'waiting';
-            if (reviewStatuses.includes(status)) return 'review';
-            if (notfitStatuses.includes(status)) return 'notfit';
             return 'review';
         }
 
