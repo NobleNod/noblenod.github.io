@@ -41,7 +41,7 @@
       "name": "Vai***",
       "college": "Ujjain Engineering College",
       "state": "Madhya Pradesh",
-      "status": "technical_call"
+      "status": "screening"
     },
     {
       "number": 7,
@@ -62,14 +62,14 @@
       "name": "Sam***",
       "college": "G. H. Raisoni College of Engineering and Management",
       "state": "Maharashtra",
-      "status": "screening"
+      "status": "technical_call"
     },
     {
       "number": 10,
       "name": "Nik***",
       "college": "School of Information Technology, RGPV Bhopal",
       "state": "Maharashtra",
-      "status": "screening"
+      "status": "awaiting_match"
     },
     {
       "number": 11,
@@ -104,7 +104,7 @@
       "name": "Ram***",
       "college": "Amrita Vishwa Vidyapeetham, Amritapuri",
       "state": "Kerala",
-      "status": "technical_call"
+      "status": "screening"
     },
     {
       "number": 16,
@@ -118,7 +118,7 @@
       "name": "Pra***",
       "college": "Guru Nanak Dev Engineering College, Bidar",
       "state": "Karnataka",
-      "status": "screening"
+      "status": "technical_call"
     },
     {
       "number": 18,
@@ -174,7 +174,7 @@
       "name": "Ama***",
       "college": "Shri Ramswaroop Memorial University",
       "state": "Uttar Pradesh",
-      "status": "awaiting_match"
+      "status": "screening"
     },
     {
       "number": 26,
@@ -202,14 +202,14 @@
       "name": "Atu***",
       "college": "KIET Group of Institutions, Ghaziabad",
       "state": "Uttar Pradesh",
-      "status": "awaiting_match"
+      "status": "screening"
     },
     {
       "number": 30,
       "name": "Anm***",
       "college": "Indian Institute of Technology, Guwahati",
       "state": "Tamil Nadu",
-      "status": "awaiting_match"
+      "status": "screening"
     },
     {
       "number": 31,
@@ -223,7 +223,7 @@
       "name": "Adi***",
       "college": "National Institute of Technology, Jamshedpur",
       "state": "Jharkhand",
-      "status": "technical_call"
+      "status": "screening"
     },
     {
       "number": 33,
@@ -251,7 +251,35 @@
       "name": "Dev***",
       "college": "Chitkara University",
       "state": "Delhi",
-      "status": "awaiting_match"
+      "status": "screening"
+    },
+    {
+      "number": 37,
+      "name": "Har***",
+      "college": "Vellore Institute of Technology",
+      "state": "Andhra Pradesh",
+      "status": "screening"
+    },
+    {
+      "number": 38,
+      "name": "Mih***",
+      "college": "Sardar Vallabhbhai National Institute of Technology, Surat",
+      "state": "Gujarat",
+      "status": "screening"
+    },
+    {
+      "number": 39,
+      "name": "Pra***",
+      "college": "ABES Engineering College",
+      "state": "Uttar Pradesh",
+      "status": "screening"
+    },
+    {
+      "number": 40,
+      "name": "Aff***",
+      "college": "Lords Institute of Engineering and Technology",
+      "state": "Telangana",
+      "status": "screening"
     }
   ]
 }
