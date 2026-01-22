@@ -41,7 +41,7 @@
       "name": "Vai***",
       "college": "Ujjain Engineering College",
       "state": "Madhya Pradesh",
-      "status": "screening"
+      "status": "technical_call"
     },
     {
       "number": 7,
@@ -62,7 +62,7 @@
       "name": "Sam***",
       "college": "G. H. Raisoni College of Engineering and Management",
       "state": "Maharashtra",
-      "status": "technical_call"
+      "status": "screening"
     },
     {
       "number": 10,
@@ -104,7 +104,7 @@
       "name": "Ram***",
       "college": "Amrita Vishwa Vidyapeetham, Amritapuri",
       "state": "Kerala",
-      "status": "screening"
+      "status": "technical_call"
     },
     {
       "number": 16,
@@ -118,7 +118,7 @@
       "name": "Pra***",
       "college": "Guru Nanak Dev Engineering College, Bidar",
       "state": "Karnataka",
-      "status": "technical_call"
+      "status": "screening"
     },
     {
       "number": 18,
@@ -132,7 +132,7 @@
       "name": "Pha***",
       "college": "RVR & JC College of Engineering",
       "state": "Andhra Pradesh",
-      "status": "screening"
+      "status": "technical_call"
     },
     {
       "number": 20,
@@ -167,7 +167,7 @@
       "name": "Sai***",
       "college": "Vellore Institute of Technology, Andhra Pradesh",
       "state": "Andhra Pradesh",
-      "status": "screening"
+      "status": "technical_call"
     },
     {
       "number": 25,
@@ -223,14 +223,14 @@
       "name": "Adi***",
       "college": "National Institute of Technology, Jamshedpur",
       "state": "Jharkhand",
-      "status": "screening"
+      "status": "technical_call"
     },
     {
       "number": 33,
       "name": "May***",
       "college": "PES University",
       "state": "Maharashtra",
-      "status": "screening"
+      "status": "technical_call"
     },
     {
       "number": 34,
