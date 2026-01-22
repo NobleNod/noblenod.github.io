@@ -126,6 +126,16 @@
             'awaiting_match': 'Awaiting Match'
         };
 
+        // Status to page URL mapping
+        const STATUS_URLS = {
+            'screening': 'screening.html',
+            'technical_call': 'technical-call.html',
+            'referred': 'referred.html',
+            'interviewing': 'interviewing.html',
+            'placed': 'placed.html',
+            'awaiting_match': 'awaiting-match.html'
+        };
+
         // Status to badge class mapping
         function getStatusClass(status) {
             const classes = {
@@ -144,6 +154,11 @@
             return STATUS_DISPLAY[status] || status;
         }
 
+        // Get URL for status
+        function getStatusUrl(status) {
+            return STATUS_URLS[status] || '#';
+        }
+
         // Fetch and render pipeline data
         async function loadPipelineData() {
             try {
@@ -156,7 +171,7 @@
                 // Render table with both desktop and mobile layouts
                 const tbody = document.getElementById('pipelineBody');
                 tbody.innerHTML = data.candidates.map(candidate => `
-                    <tr>
+                    <tr class="clickable-row" onclick="window.location='${getStatusUrl(candidate.status)}'">
                         <!-- Desktop columns -->
                         <td class="desktop-cell">${candidate.number}</td>
                         <td class="desktop-cell candidate-name">${candidate.name}</td>
