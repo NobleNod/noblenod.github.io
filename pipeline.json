@@ -67,7 +67,7 @@
     {
       "number": 10,
       "name": "Nik***",
-      "college": "School of Information Technology, RGPV Bhopal",
+      "college": "School of Information Technology, Rajiv Gandhi Proudyogiki Vishwavidyalaya, Bhopal",
       "state": "Maharashtra",
       "status": "awaiting_match"
     },
@@ -146,7 +146,7 @@
       "name": "Nav***",
       "college": "Sityog Institute of Technology",
       "state": "Bihar",
-      "status": "screening"
+      "status": "awaiting_match"
     },
     {
       "number": 22,
@@ -209,7 +209,7 @@
       "name": "Anm***",
       "college": "Indian Institute of Technology, Guwahati",
       "state": "Tamil Nadu",
-      "status": "screening"
+      "status": "awaiting_match"
     },
     {
       "number": 31,
@@ -251,7 +251,7 @@
       "name": "Dev***",
       "college": "Chitkara University",
       "state": "Delhi",
-      "status": "screening"
+      "status": "awaiting_match"
     },
     {
       "number": 37,
@@ -279,6 +279,13 @@
       "name": "Aff***",
       "college": "Lords Institute of Engineering and Technology",
       "state": "Telangana",
+      "status": "awaiting_match"
+    },
+    {
+      "number": 41,
+      "name": "Arj***",
+      "college": "University Institute of Technology, Vakkom",
+      "state": "Kerala",
       "status": "screening"
     }
   ]
