@@ -128,12 +128,15 @@
 
         // Status to badge class mapping
         function getStatusClass(status) {
-            const activeStatuses = ['technical_call', 'referred', 'interviewing', 'placed'];
-            const waitingStatuses = ['screening', 'awaiting_match'];
-
-            if (activeStatuses.includes(status)) return 'active';
-            if (waitingStatuses.includes(status)) return 'waiting';
-            return 'review';
+            const classes = {
+                'screening': 'purple',
+                'technical_call': 'blue',
+                'referred': 'orange',
+                'interviewing': 'red',
+                'placed': 'green',
+                'awaiting_match': 'gray'
+            };
+            return classes[status] || 'gray';
         }
 
         // Get display text for status

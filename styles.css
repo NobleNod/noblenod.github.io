@@ -485,22 +485,32 @@ a:hover {
     font-weight: var(--font-medium);
 }
 
-.status-badge.active {
-    background: var(--color-success-light);
-    color: var(--color-success);
+.status-badge.purple {
+    background: #F3E8FF;
+    color: #7C3AED;
 }
 
-.status-badge.waiting {
-    background: var(--color-warning-light);
-    color: var(--color-warning);
-}
-
-.status-badge.review {
+.status-badge.blue {
     background: var(--color-primary-light);
     color: var(--color-primary);
 }
 
-.status-badge.notfit {
+.status-badge.orange {
+    background: var(--color-warning-light);
+    color: var(--color-warning);
+}
+
+.status-badge.red {
+    background: var(--color-danger-light);
+    color: var(--color-danger);
+}
+
+.status-badge.green {
+    background: var(--color-success-light);
+    color: var(--color-success);
+}
+
+.status-badge.gray {
     background: var(--color-bg-muted);
     color: var(--color-text-muted);
 }
@@ -1047,7 +1057,7 @@ a:hover {
     }
 
     .mobile-row-1 .candidate-name {
-        font-weight: var(--font-semibold);
+        font-weight: var(--font-medium);
         font-family: var(--font-mono);
     }
 
@@ -1066,6 +1076,18 @@ a:hover {
         font-size: 0.65rem;
         padding: 2px 6px;
         white-space: nowrap;
+    }
+
+    .mobile-row-1 .mobile-progress {
+        margin-left: auto;
+    }
+
+    .mobile-row-1 .steps-progress {
+        transform: scale(0.9);
+    }
+
+    .mobile-row-1 .awaiting-match-icon {
+        font-size: 0.65rem;
     }
 
     .pipeline-table td.mobile-row-2 {
