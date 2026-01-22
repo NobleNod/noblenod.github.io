@@ -24,6 +24,123 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
+        <style>
+            /* Desktop: compact table */
+            .pipeline-table {
+                font-size: 0.85rem;
+            }
+            
+            .pipeline-table th,
+            .pipeline-table td {
+                padding: 0.5rem 0.6rem;
+            }
+            
+            .pipeline-table th {
+                font-size: 0.75rem;
+                text-transform: uppercase;
+                letter-spacing: 0.03em;
+            }
+            
+            .pipeline-table .status-badge {
+                font-size: 0.7rem;
+                padding: 0.15rem 0.4rem;
+            }
+            
+            @media (min-width: 769px) {
+                .mobile-row-1,
+                .mobile-row-2 {
+                    display: none !important;
+                }
+                
+                .desktop-cell {
+                    display: table-cell;
+                }
+            }
+            
+            /* Mobile card layout */
+            @media (max-width: 768px) {
+                .pipeline-table {
+                    border-collapse: separate;
+                    border-spacing: 0 0.5rem;
+                }
+                
+                .pipeline-table thead {
+                    display: none;
+                }
+                
+                .pipeline-table tbody {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+                }
+                
+                .pipeline-table tr {
+                    display: flex;
+                    flex-direction: column;
+                    background: var(--bg-card, #1a1a1a);
+                    border: 1px solid var(--border, #2a2a2a);
+                    border-radius: 8px;
+                    padding: 0.75rem;
+                }
+                
+                .pipeline-table td {
+                    padding: 0;
+                    border: none;
+                }
+                
+                /* Hide desktop cells on mobile */
+                .desktop-cell {
+                    display: none !important;
+                }
+                
+                /* Show mobile rows */
+                .mobile-row-1,
+                .mobile-row-2 {
+                    display: flex !important;
+                    width: 100%;
+                }
+                
+                .mobile-row-1 {
+                    align-items: center;
+                    gap: 0.5rem;
+                    margin-bottom: 0.35rem;
+                    flex-wrap: wrap;
+                }
+                
+                .mobile-row-1 .candidate-number {
+                    color: var(--text-muted, #666);
+                    font-size: 0.85rem;
+                    min-width: 20px;
+                }
+                
+                .mobile-row-1 .candidate-name {
+                    font-weight: 600;
+                }
+                
+                .mobile-row-1 .candidate-state {
+                    color: var(--text-secondary, #a0a0a0);
+                    font-size: 0.85rem;
+                }
+                
+                .mobile-row-1 .candidate-state::before {
+                    content: "·";
+                    margin-right: 0.5rem;
+                }
+                
+                .mobile-row-1 .status-badge {
+                    margin-left: auto;
+                    font-size: 0.7rem;
+                    padding: 0.15rem 0.4rem;
+                    white-space: nowrap;
+                }
+                
+                .mobile-row-2 {
+                    color: var(--text-secondary, #a0a0a0);
+                    font-size: 0.8rem;
+                    padding-left: 20px;
+                }
+            }
+        </style>
     </head>
 <body>
     <div class="container">
@@ -51,12 +168,13 @@
                             <th>#</th>
                             <th>Name</th>
                             <th>College</th>
+                            <th>State</th>
                             <th>Status</th>
                         </tr>
                     </thead>
                     <tbody id="pipelineBody">
                         <tr>
-                            <td colspan="4" style="text-align: center;">Loading pipeline data...</td>
+                            <td colspan="5" style="text-align: center;">Loading pipeline data...</td>
                         </tr>
                     </tbody>
                 </table>
@@ -118,23 +236,18 @@
         const STATUS_DISPLAY = {
             'under_review': 'Under review',
             'rewrite_requested': 'Rewrite requested',
-            'checking_relocation': 'Checking relocation',
-            'checking_graduation': 'Checking graduation',
             'awaiting_response': 'Awaiting response',
+            'checking_relocation': 'Checking relocation',
             'awaiting_graduation': 'Awaiting graduation',
             'scheduling_call': 'Scheduling call',
-            'call_scheduled': 'Technical call scheduled',
+            'call_scheduled': 'Call scheduled',
             'call_completed_pass': 'Passed technical call',
             'call_completed_fail': 'Did not pass',
             'referred': 'Referred to company',
             'tracking_with_company': 'Tracking with company',
-            'company_reviewing': 'Company reviewing',
             'interview_scheduled': 'Interview scheduled',
-            'interview_completed': 'Interview completed',
             'placed': 'Placed',
-            'rejected_by_company': 'Not selected',
-            'not_a_fit_experienced': 'Too experienced',
-            'not_a_fit_location': 'Location mismatch',
+            'closed': 'Closed',
             'ghosted': 'No response',
             'withdrew': 'Withdrew'
         };
@@ -142,9 +255,9 @@
         // Status to badge class mapping
         function getStatusClass(status) {
             const activeStatuses = ['scheduling_call', 'call_scheduled', 'referred', 'tracking_with_company', 'interview_scheduled', 'placed', 'call_completed_pass'];
-            const waitingStatuses = ['checking_relocation', 'checking_graduation', 'awaiting_response', 'rewrite_requested', 'awaiting_graduation'];
-            const reviewStatuses = ['under_review', 'company_reviewing', 'interview_completed'];
-            const notfitStatuses = ['not_a_fit_experienced', 'not_a_fit_location', 'ghosted', 'call_completed_fail', 'rejected_by_company', 'withdrew'];
+            const waitingStatuses = ['checking_relocation', 'awaiting_response', 'rewrite_requested', 'awaiting_graduation'];
+            const reviewStatuses = ['under_review'];
+            const notfitStatuses = ['closed', 'ghosted', 'call_completed_fail', 'withdrew'];
 
             if (activeStatuses.includes(status)) return 'active';
             if (waitingStatuses.includes(status)) return 'waiting';
@@ -167,14 +280,25 @@
                 // Update last updated
                 document.getElementById('lastUpdated').textContent = `Last updated: ${data.lastUpdated}`;
 
-                // Render table
+                // Render table with both desktop and mobile layouts
                 const tbody = document.getElementById('pipelineBody');
                 tbody.innerHTML = data.candidates.map(candidate => `
                     <tr>
-                        <td>${candidate.number}</td>
-                        <td class="candidate-name">${candidate.name}</td>
-                        <td class="candidate-college">${candidate.college}</td>
-                        <td><span class="status-badge ${getStatusClass(candidate.status)}">${getStatusDisplay(candidate.status)}</span></td>
+                        <!-- Desktop columns -->
+                        <td class="desktop-cell">${candidate.number}</td>
+                        <td class="desktop-cell candidate-name">${candidate.name}</td>
+                        <td class="desktop-cell candidate-college">${candidate.college}</td>
+                        <td class="desktop-cell candidate-state">${candidate.state}</td>
+                        <td class="desktop-cell"><span class="status-badge ${getStatusClass(candidate.status)}">${getStatusDisplay(candidate.status)}</span></td>
+                        
+                        <!-- Mobile layout -->
+                        <td class="mobile-row-1">
+                            <span class="candidate-number">${candidate.number}</span>
+                            <span class="candidate-name">${candidate.name}</span>
+                            <span class="candidate-state">${candidate.state}</span>
+                            <span class="status-badge ${getStatusClass(candidate.status)}">${getStatusDisplay(candidate.status)}</span>
+                        </td>
+                        <td class="mobile-row-2">${candidate.college}</td>
                     </tr>
                 `).join('');
 
@@ -182,7 +306,7 @@
                 console.error('Error loading pipeline data:', error);
                 document.getElementById('pipelineBody').innerHTML = `
                     <tr>
-                        <td colspan="4" style="text-align: center;">Unable to load pipeline data. Please refresh.</td>
+                        <td colspan="5" style="text-align: center;">Unable to load pipeline data. Please refresh.</td>
                     </tr>
                 `;
             }

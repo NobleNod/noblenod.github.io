@@ -1,136 +1,235 @@
 {
-  "lastUpdated": "2026-01-21",
+  "lastUpdated": "2026-01-22",
   "candidates": [
     {
       "number": 1,
-      "name": "Sh***",
+      "name": "Shi***",
       "college": "University of Petroleum and Energy Studies, Dehradun",
+      "state": "Haryana",
       "status": "rewrite_requested"
     },
     {
       "number": 2,
-      "name": "Ab***",
-      "college": "C. Abdul Hakeem College of Engineering and Technology",
+      "name": "Abd***",
+      "college": "C. Abdul Hakeem College",
+      "state": "Tamil Nadu",
       "status": "rewrite_requested"
     },
     {
       "number": 3,
-      "name": "Pa***",
+      "name": "Pal***",
       "college": "Amrita Vishwa Vidyapeetham",
+      "state": "Tamil Nadu",
       "status": "call_scheduled"
     },
     {
       "number": 4,
-      "name": "Am***",
+      "name": "Ama***",
       "college": "Indira Gandhi National Open University",
+      "state": "Delhi",
       "status": "awaiting_graduation"
     },
     {
       "number": 5,
-      "name": "Ta***",
+      "name": "Tan***",
       "college": "Government College of Engineering, Jalgaon",
+      "state": "Maharashtra",
       "status": "call_scheduled"
     },
     {
       "number": 6,
-      "name": "Va***",
+      "name": "Vai***",
       "college": "Ujjain Engineering College",
+      "state": "Madhya Pradesh",
       "status": "checking_relocation"
     },
     {
       "number": 7,
-      "name": "Na***",
+      "name": "Nar***",
       "college": "University College of Engineering, Tindivanam",
+      "state": "Tamil Nadu",
       "status": "awaiting_graduation"
     },
     {
       "number": 8,
-      "name": "Go***",
+      "name": "Gok***",
       "college": "Dr. MGR Educational and Research Institute",
+      "state": "Tamil Nadu",
       "status": "awaiting_graduation"
     },
     {
       "number": 9,
-      "name": "Sa***",
-      "college": "G. H. Raisoni College of Engineering, Nagpur",
+      "name": "Sam***",
+      "college": "G. H. Raisoni College of Engineering and Management",
+      "state": "Maharashtra",
       "status": "scheduling_call"
     },
     {
       "number": 10,
-      "name": "Ni***",
+      "name": "Nik***",
       "college": "School of Information Technology, RGPV Bhopal",
+      "state": "Maharashtra",
       "status": "awaiting_response"
     },
     {
       "number": 11,
-      "name": "An***",
+      "name": "Ank***",
       "college": "Indian Institute of Information Technology, Una",
+      "state": "Jharkhand",
       "status": "call_scheduled"
     },
     {
       "number": 12,
-      "name": "Sa***",
+      "name": "Sar***",
       "college": "Manakula Vinayagar Institute of Technology, Puducherry",
+      "state": "Tamil Nadu",
       "status": "call_scheduled"
     },
     {
       "number": 13,
-      "name": "Ch***",
-      "college": "Panimalar Institute of Technology, Chennai",
+      "name": "Cha***",
+      "college": "Panimalar Institute of Technology",
+      "state": "Tamil Nadu",
       "status": "rewrite_requested"
     },
     {
       "number": 14,
-      "name": "Sh***",
+      "name": "Shi***",
       "college": "Government Engineering College, Kushalnagar",
-      "status": "checking_relocation"
+      "state": "Karnataka",
+      "status": "awaiting_graduation"
     },
     {
       "number": 15,
-      "name": "Ra***",
+      "name": "Ram***",
       "college": "Amrita Vishwa Vidyapeetham, Amritapuri",
+      "state": "Kerala",
       "status": "checking_relocation"
     },
     {
       "number": 16,
-      "name": "Ve***",
-      "college": "Vardhaman College of Engineering, Hyderabad",
-      "status": "scheduling_call"
+      "name": "Vel***",
+      "college": "Vardhaman College of Engineering",
+      "state": "Telangana",
+      "status": "closed"
     },
     {
       "number": 17,
-      "name": "Pr***",
+      "name": "Pra***",
       "college": "Guru Nanak Dev Engineering College, Bidar",
-      "status": "rewrite_requested"
+      "state": "Karnataka",
+      "status": "scheduling_call"
     },
     {
       "number": 18,
-      "name": "La***",
+      "name": "Lay***",
       "college": "Dhanalakshmi Srinivasan Institute of Technology",
-      "status": "under_review"
+      "state": "Tamil Nadu",
+      "status": "rewrite_requested"
     },
     {
       "number": 19,
-      "name": "Ph***",
+      "name": "Pha***",
       "college": "RVR & JC College of Engineering",
-      "status": "under_review"
+      "state": "Andhra Pradesh",
+      "status": "rewrite_requested"
     },
     {
       "number": 20,
-      "name": "Ak***",
-      "college": "MEA Engineering College",
-      "status": "under_review"
+      "name": "Aks***",
+      "college": "KMEA Engineering College",
+      "state": "Kerala",
+      "status": "rewrite_requested"
     },
     {
       "number": 21,
-      "name": "Na***",
+      "name": "Nav***",
       "college": "Sityog Institute of Technology",
-      "status": "under_review"
+      "state": "Bihar",
+      "status": "rewrite_requested"
     },
     {
       "number": 22,
-      "name": "Lo***",
+      "name": "Lol***",
       "college": "Chaitanya Bharathi Institute of Technology",
+      "state": "Telangana",
+      "status": "awaiting_response"
+    },
+    {
+      "number": 23,
+      "name": "Moh***",
+      "college": "Amrita Vishwa Vidyapeetham",
+      "state": "Tamil Nadu",
+      "status": "rewrite_requested"
+    },
+    {
+      "number": 24,
+      "name": "Sai***",
+      "college": "Vellore Institute of Technology, Andhra Pradesh",
+      "state": "Andhra Pradesh",
+      "status": "rewrite_requested"
+    },
+    {
+      "number": 25,
+      "name": "Ama***",
+      "college": "Shri Ramswaroop Memorial University",
+      "state": "Uttar Pradesh",
+      "status": "awaiting_graduation"
+    },
+    {
+      "number": 26,
+      "name": "Pra***",
+      "college": "Vasavi College of Engineering",
+      "state": "Telangana",
+      "status": "closed"
+    },
+    {
+      "number": 27,
+      "name": "Viv***",
+      "college": "Indian Institute of Information Technology, Bhagalpur",
+      "state": "Maharashtra",
+      "status": "rewrite_requested"
+    },
+    {
+      "number": 28,
+      "name": "Yas***",
+      "college": "Sri Sivasubramaniya Nadar College of Engineering",
+      "state": "Tamil Nadu",
+      "status": "awaiting_graduation"
+    },
+    {
+      "number": 29,
+      "name": "Atu***",
+      "college": "KIET Group of Institutions, Ghaziabad",
+      "state": "Uttar Pradesh",
+      "status": "awaiting_graduation"
+    },
+    {
+      "number": 30,
+      "name": "Anm***",
+      "college": "Indian Institute of Technology, Guwahati",
+      "state": "Tamil Nadu",
+      "status": "closed"
+    },
+    {
+      "number": 31,
+      "name": "Yog***",
+      "college": "Allenhouse Institute of Technology",
+      "state": "Uttar Pradesh",
+      "status": "rewrite_requested"
+    },
+    {
+      "number": 32,
+      "name": "Adi***",
+      "college": "National Institute of Technology, Jamshedpur",
+      "state": "Jharkhand",
+      "status": "checking_relocation"
+    },
+    {
+      "number": 33,
+      "name": "May***",
+      "college": "PES University",
+      "state": "Maharashtra",
       "status": "under_review"
     }
   ]
