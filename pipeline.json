@@ -153,7 +153,7 @@
       "name": "Lol***",
       "college": "Chaitanya Bharathi Institute of Technology",
       "state": "Telangana",
-      "status": "screening"
+      "status": "awaiting_match"
     },
     {
       "number": 23,
@@ -231,6 +231,27 @@
       "college": "PES University",
       "state": "Maharashtra",
       "status": "screening"
+    },
+    {
+      "number": 34,
+      "name": "Pra***",
+      "college": "SRM Institute of Science and Technology",
+      "state": "Tamil Nadu",
+      "status": "screening"
+    },
+    {
+      "number": 35,
+      "name": "Rah***",
+      "college": "DY Patil University, Pune",
+      "state": "Maharashtra",
+      "status": "screening"
+    },
+    {
+      "number": 36,
+      "name": "Dev***",
+      "college": "Chitkara University",
+      "state": "Delhi",
+      "status": "awaiting_match"
     }
   ]
 }
