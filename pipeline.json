@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2026-01-22",
+  "lastUpdated": "2026-01-24",
   "candidates": [
     {
       "number": 1,
-      "name": "Shi***",
+      "name": "shi***",
       "college": "University of Petroleum and Energy Studies, Dehradun",
       "state": "Haryana",
       "status": "screening"
@@ -25,7 +25,7 @@
     {
       "number": 4,
       "name": "Ama***",
-      "college": "Indira Gandhi National Open University",
+      "college": "IGNOU",
       "state": "Delhi",
       "status": "awaiting_match"
     },
@@ -39,7 +39,7 @@
     {
       "number": 6,
       "name": "Vai***",
-      "college": "Ujjain Engineering College",
+      "college": "Ujjain Engineering College, Ujjain",
       "state": "Madhya Pradesh",
       "status": "screening"
     },
@@ -67,14 +67,14 @@
     {
       "number": 10,
       "name": "Nik***",
-      "college": "School of Information Technology, RGPV, Bhopal",
+      "college": "SOIT, RGPV, Bhopal",
       "state": "Maharashtra",
       "status": "awaiting_match"
     },
     {
       "number": 11,
       "name": "Ank***",
-      "college": "Indian Institute of Information Technology, Una",
+      "college": "IIIT Una",
       "state": "Jharkhand",
       "status": "technical_call"
     },
@@ -165,7 +165,7 @@
     {
       "number": 24,
       "name": "Sai***",
-      "college": "Vellore Institute of Technology, Andhra Pradesh",
+      "college": "VIT-AP University",
       "state": "Andhra Pradesh",
       "status": "technical_call"
     },
@@ -200,14 +200,14 @@
     {
       "number": 29,
       "name": "Atu***",
-      "college": "KIET Group of Institutions, Ghaziabad",
+      "college": "KIET Group of Institutions",
       "state": "Uttar Pradesh",
       "status": "screening"
     },
     {
       "number": 30,
       "name": "Anm***",
-      "college": "Indian Institute of Technology, Guwahati",
+      "college": "IIT Guwahati",
       "state": "Tamil Nadu",
       "status": "awaiting_match"
     },
@@ -221,7 +221,7 @@
     {
       "number": 32,
       "name": "Adi***",
-      "college": "National Institute of Technology, Jamshedpur",
+      "college": "NIT Jamshedpur",
       "state": "Jharkhand",
       "status": "screening"
     },
@@ -263,7 +263,7 @@
     {
       "number": 38,
       "name": "Mih***",
-      "college": "Sardar Vallabhbhai National Institute of Technology, Surat",
+      "college": "NIT Surat (SVNIT)",
       "state": "Gujarat",
       "status": "screening"
     },
@@ -286,6 +286,153 @@
       "name": "Arj***",
       "college": "University Institute of Technology, Vakkom",
       "state": "Kerala",
+      "status": "screening"
+    },
+    {
+      "number": 42,
+      "name": "Abh***",
+      "college": "Malla Reddy College of Engineering",
+      "state": "Telangana",
+      "status": "screening"
+    },
+    {
+      "number": 43,
+      "name": "Ven***",
+      "college": "Great Lakes Institute of Management",
+      "state": "Tamil Nadu",
+      "status": "screening"
+    },
+    {
+      "number": 44,
+      "name": "Val***",
+      "college": "Priyadarshini College of Engineering, Nagpur",
+      "state": "Maharashtra",
+      "status": "screening"
+    },
+    {
+      "number": 45,
+      "name": "Har***",
+      "college": "Tecnia Institute of Advanced Studies",
+      "state": "Delhi",
+      "status": "screening"
+    },
+    {
+      "number": 46,
+      "name": "Vas***",
+      "college": "National School of Business",
+      "state": "Delhi",
+      "status": "screening"
+    },
+    {
+      "number": 47,
+      "name": "san***",
+      "college": "Sagar Institute of Research and Technology Excellence",
+      "state": "Madhya Pradesh",
+      "status": "screening"
+    },
+    {
+      "number": 48,
+      "name": "Vil***",
+      "college": "Government College of Engineering, Jalgaon",
+      "state": "Maharashtra",
+      "status": "screening"
+    },
+    {
+      "number": 49,
+      "name": "N***",
+      "college": "SRM University",
+      "state": "Andhra Pradesh",
+      "status": "screening"
+    },
+    {
+      "number": 50,
+      "name": "Mee***",
+      "college": "Vellore Institute of Technology",
+      "state": "Tamil Nadu",
+      "status": "screening"
+    },
+    {
+      "number": 51,
+      "name": "Sak***",
+      "college": "Vellore Institute of Technology",
+      "state": "Madhya Pradesh",
+      "status": "screening"
+    },
+    {
+      "number": 52,
+      "name": "Dad***",
+      "college": "Aditya Degree College",
+      "state": "Andhra Pradesh",
+      "status": "screening"
+    },
+    {
+      "number": 53,
+      "name": "Dad***",
+      "college": "Centurion University of Technology and Management",
+      "state": "Andhra Pradesh",
+      "status": "screening"
+    },
+    {
+      "number": 54,
+      "name": "Mon***",
+      "college": "Bennett University",
+      "state": "Telangana",
+      "status": "screening"
+    },
+    {
+      "number": 55,
+      "name": "Utt***",
+      "college": "KIET Group of Institutions",
+      "state": "Delhi",
+      "status": "screening"
+    },
+    {
+      "number": 56,
+      "name": "Gee***",
+      "college": "SVCE, Tirupati",
+      "state": "Andhra Pradesh",
+      "status": "screening"
+    },
+    {
+      "number": 57,
+      "name": "Mar***",
+      "college": "Institute of Aeronautical Engineering",
+      "state": "Telangana",
+      "status": "screening"
+    },
+    {
+      "number": 58,
+      "name": "Swa***",
+      "college": "Gandhi Institute for Technology",
+      "state": "Odisha",
+      "status": "screening"
+    },
+    {
+      "number": 59,
+      "name": "J***",
+      "college": "Silicon Institute of Technology",
+      "state": "Odisha",
+      "status": "screening"
+    },
+    {
+      "number": 60,
+      "name": "Apr***",
+      "college": "Institute of Technical Education and Research",
+      "state": "Karnataka",
+      "status": "screening"
+    },
+    {
+      "number": 61,
+      "name": "Avv***",
+      "college": "Anil Neerukonda Institute of Technology and Sciences",
+      "state": "Andhra Pradesh",
+      "status": "screening"
+    },
+    {
+      "number": 62,
+      "name": "Nav***",
+      "college": "Periyar Maniammai Institute of Science and Technology",
+      "state": "Tamil Nadu",
       "status": "screening"
     }
   ]
