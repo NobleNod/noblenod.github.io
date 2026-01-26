@@ -1,108 +1,108 @@
 {
-  "lastUpdated": "2026-01-24",
+  "lastUpdated": "2026-01-26",
   "candidates": [
     {
       "number": 1,
       "name": "shi***",
-      "college": "University of Petroleum and Energy Studies, Dehradun",
-      "state": "Haryana",
+      "college": "University of Petroleum and Energy Studies Dehradun",
+      "state": "Faridabad",
       "status": "rejected"
     },
     {
       "number": 2,
       "name": "Abd***",
       "college": "C. Abdul Hakeem College",
-      "state": "Tamil Nadu",
-      "status": "screening"
+      "state": "Vellore",
+      "status": "rejected"
     },
     {
       "number": 3,
       "name": "Pal***",
       "college": "Amrita Vishwa Vidyapeetham",
-      "state": "Tamil Nadu",
-      "status": "technical_call"
+      "state": "Chennai",
+      "status": "rejected"
     },
     {
       "number": 4,
       "name": "Ama***",
-      "college": "IGNOU",
-      "state": "Delhi",
+      "college": "Indira Gandhi National Open University",
+      "state": "New Delhi",
       "status": "awaiting_match"
     },
     {
       "number": 5,
       "name": "Tan***",
-      "college": "Government College of Engineering, Jalgaon",
-      "state": "Maharashtra",
+      "college": "Government College of Engineering Jalgaon",
+      "state": "Nagpur",
       "status": "technical_call"
     },
     {
       "number": 6,
       "name": "Vai***",
       "college": "Ujjain Engineering College",
-      "state": "Madhya Pradesh",
+      "state": "Ujjain",
       "status": "rejected"
     },
     {
       "number": 7,
       "name": "Nar***",
-      "college": "University College of Engineering, Tindivanam",
-      "state": "Tamil Nadu",
+      "college": "University College of Engineering Tindivanam",
+      "state": "Chennai",
       "status": "awaiting_match"
     },
     {
       "number": 8,
       "name": "Gok***",
       "college": "Dr. MGR Educational and Research Institute",
-      "state": "Tamil Nadu",
+      "state": "Chennai",
       "status": "awaiting_match"
     },
     {
       "number": 9,
       "name": "Sam***",
-      "college": "G. H. Raisoni College of Engineering and Management",
-      "state": "Maharashtra",
+      "college": "G.H. Raisoni College of Engineering and Management",
+      "state": "Nagpur",
       "status": "rejected"
     },
     {
       "number": 10,
       "name": "Nik***",
-      "college": "School of Information Technology, RGPV Bhopal",
-      "state": "Maharashtra",
+      "college": "School of Information Technology RGPV Bhopal",
+      "state": "Pune",
       "status": "awaiting_match"
     },
     {
       "number": 11,
       "name": "Ank***",
-      "college": "IIIT Una",
-      "state": "Jharkhand",
-      "status": "technical_call"
+      "college": "Indian Institute of Information Technology Una",
+      "state": "Ranchi",
+      "status": "rejected"
     },
     {
       "number": 12,
       "name": "Sar***",
-      "college": "Manakula Vinayagar Institute of Technology, Puducherry",
-      "state": "Tamil Nadu",
-      "status": "technical_call"
+      "college": "Manakula Vinayagar Institute of Technology",
+      "state": "Cuddalore",
+      "status": "rejected"
     },
     {
       "number": 13,
       "name": "Cha***",
       "college": "Panimalar Institute of Technology",
-      "state": "Tamil Nadu",
+      "state": "Chennai",
       "status": "rejected"
     },
     {
       "number": 14,
       "name": "Shi***",
-      "college": "Government Engineering College, Kushalnagar",
-      "state": "Karnataka",
+      "college": "Government Engineering College Kushalnagar",
+      "state": "Bangalore",
       "status": "awaiting_match"
     },
     {
       "number": 15,
       "name": "Ram***",
-      "college": "Amrita Vishwa Vidyapeetham, Amritapuri",
+      "college": "Amrita Vishwa Vidyapeetham Amritapuri",
       "state": "Kerala",
       "status": "awaiting_match"
     },
@@ -110,21 +110,21 @@
       "number": 16,
       "name": "Vel***",
       "college": "Vardhaman College of Engineering",
-      "state": "Telangana",
+      "state": "Hyderabad",
       "status": "awaiting_match"
     },
     {
       "number": 17,
       "name": "Pra***",
-      "college": "Guru Nanak Dev Engineering College, Bidar",
-      "state": "Karnataka",
+      "college": "Guru Nanak Dev Engineering College Bidar",
+      "state": "Bidar",
       "status": "technical_call"
     },
     {
       "number": 18,
       "name": "Lay***",
       "college": "Dhanalakshmi Srinivasan Institute of Technology",
-      "state": "Tamil Nadu",
+      "state": "Chennai",
       "status": "rejected"
     },
     {
@@ -132,12 +132,12 @@
       "name": "Pha***",
       "college": "RVR & JC College of Engineering",
       "state": "Andhra Pradesh",
-      "status": "technical_call"
+      "status": "rejected"
     },
     {
       "number": 20,
       "name": "Aks***",
-      "college": "KMEA Engineering College",
+      "college": "Akshai Asok",
       "state": "Kerala",
       "status": "rejected"
     },
@@ -145,105 +145,105 @@
       "number": 21,
       "name": "Nav***",
       "college": "Sityog Institute of Technology",
-      "state": "Bihar",
+      "state": "Aurangabad",
       "status": "awaiting_match"
     },
     {
       "number": 22,
       "name": "Lol***",
       "college": "Chaitanya Bharathi Institute of Technology",
-      "state": "Telangana",
+      "state": "Hyderabad",
       "status": "awaiting_match"
     },
     {
       "number": 23,
       "name": "Moh***",
       "college": "Amrita Vishwa Vidyapeetham",
-      "state": "Tamil Nadu",
+      "state": "Tirunelveli",
       "status": "awaiting_match"
     },
     {
       "number": 24,
       "name": "Sai***",
       "college": "VIT-AP University",
-      "state": "Andhra Pradesh",
+      "state": "Tirupati",
       "status": "rejected"
     },
     {
       "number": 25,
       "name": "Ama***",
       "college": "Shri Ramswaroop Memorial University",
-      "state": "Uttar Pradesh",
+      "state": "Lucknow",
       "status": "rejected"
     },
     {
       "number": 26,
       "name": "Pra***",
       "college": "Vasavi College of Engineering",
-      "state": "Telangana",
+      "state": "Hyderabad",
       "status": "awaiting_match"
     },
     {
       "number": 27,
       "name": "Viv***",
-      "college": "Indian Institute of Information Technology, Bhagalpur",
-      "state": "Maharashtra",
+      "college": "Indian Institute of Information Technology Bhagalpur",
+      "state": "Mumbai",
       "status": "rejected"
     },
     {
       "number": 28,
       "name": "Yas***",
       "college": "Sri Sivasubramaniya Nadar College of Engineering",
-      "state": "Tamil Nadu",
+      "state": "Chennai",
       "status": "awaiting_match"
     },
     {
       "number": 29,
       "name": "Atu***",
       "college": "KIET Group of Institutions",
-      "state": "Uttar Pradesh",
+      "state": "Ghaziabad",
       "status": "rejected"
     },
     {
       "number": 30,
       "name": "Anm***",
-      "college": "IIT Guwahati",
-      "state": "Tamil Nadu",
+      "college": "Indian Institute of Technology Guwahati",
+      "state": "Chennai",
       "status": "awaiting_match"
     },
     {
       "number": 31,
       "name": "Yog***",
       "college": "Allenhouse Institute of Technology",
-      "state": "Uttar Pradesh",
+      "state": "Kanpur",
       "status": "rejected"
     },
     {
       "number": 32,
       "name": "Adi***",
-      "college": "NIT Jamshedpur",
-      "state": "Jharkhand",
+      "college": "National Institute of Technology Jamshedpur",
+      "state": "Ranchi",
       "status": "rejected"
     },
     {
       "number": 33,
       "name": "May***",
       "college": "PES University",
-      "state": "Maharashtra",
-      "status": "technical_call"
+      "state": "Thane",
+      "status": "rejected"
     },
     {
       "number": 34,
       "name": "Pra***",
       "college": "SRM Institute of Science and Technology",
-      "state": "Tamil Nadu",
-      "status": "screening"
+      "state": "Chennai",
+      "status": "rejected"
     },
     {
       "number": 35,
       "name": "Rah***",
-      "college": "DY Patil University, Pune",
-      "state": "Maharashtra",
+      "college": "DY Patil University Ambi",
+      "state": "Pune",
       "status": "rejected"
     },
     {
@@ -257,63 +257,63 @@
       "number": 37,
       "name": "Har***",
       "college": "Vellore Institute of Technology",
-      "state": "Andhra Pradesh",
-      "status": "screening"
+      "state": "Vijayawada",
+      "status": "awaiting_match"
     },
     {
       "number": 38,
       "name": "Mih***",
-      "college": "NIT Surat (SVNIT)",
-      "state": "Gujarat",
-      "status": "screening"
+      "college": "National Institute of Technology Surat",
+      "state": "Ahmedabad",
+      "status": "technical_call"
     },
     {
       "number": 39,
       "name": "Pra***",
       "college": "ABES Engineering College",
-      "state": "Uttar Pradesh",
-      "status": "screening"
+      "state": "Lucknow",
+      "status": "rejected"
     },
     {
       "number": 40,
       "name": "Aff***",
       "college": "Lords Institute of Engineering and Technology",
-      "state": "Telangana",
+      "state": "Hyderabad",
       "status": "awaiting_match"
     },
     {
       "number": 41,
       "name": "Arj***",
-      "college": "University Institute of Technology, Vakkom",
-      "state": "Kerala",
+      "college": "University Institute of Technology Vakkom",
+      "state": "Thiruvananthapuram",
       "status": "awaiting_match"
     },
     {
       "number": 42,
       "name": "Abh***",
       "college": "Malla Reddy College of Engineering",
-      "state": "Telangana",
-      "status": "screening"
+      "state": "Hyderabad",
+      "status": "rejected"
     },
     {
       "number": 43,
       "name": "Ven***",
       "college": "Great Lakes Institute of Management",
-      "state": "Tamil Nadu",
+      "state": "Chennai",
       "status": "awaiting_match"
     },
     {
       "number": 44,
       "name": "Val***",
-      "college": "Priyadarshini College of Engineering, Nagpur",
-      "state": "Maharashtra",
+      "college": "Priyadarshini College of Engineering Nagpur",
+      "state": "Nagpur",
       "status": "screening"
     },
     {
       "number": 45,
       "name": "Har***",
       "college": "Tecnia Institute of Advanced Studies",
-      "state": "Delhi",
+      "state": "New Delhi",
       "status": "screening"
     },
     {
@@ -321,62 +321,62 @@
       "name": "Vas***",
       "college": "National School of Business",
       "state": "Delhi",
-      "status": "awaiting_match"
+      "status": "screening"
     },
     {
       "number": 47,
       "name": "san***",
       "college": "Sagar Institute of Research and Technology Excellence",
-      "state": "Madhya Pradesh",
-      "status": "screening"
+      "state": "Bhopal",
+      "status": "rejected"
     },
     {
       "number": 48,
       "name": "Vil***",
-      "college": "Government College of Engineering, Jalgaon",
-      "state": "Maharashtra",
-      "status": "screening"
+      "college": "Government College of Engineering Jalgaon",
+      "state": "Pune",
+      "status": "rejected"
     },
     {
       "number": 49,
       "name": "N***",
       "college": "SRM University",
-      "state": "Andhra Pradesh",
-      "status": "screening"
+      "state": "Chittoor",
+      "status": "rejected"
     },
     {
       "number": 50,
       "name": "Mee***",
       "college": "Vellore Institute of Technology",
-      "state": "Tamil Nadu",
-      "status": "awaiting_match"
+      "state": "Chennai",
+      "status": "screening"
     },
     {
       "number": 51,
       "name": "Sak***",
       "college": "Vellore Institute of Technology",
-      "state": "Madhya Pradesh",
+      "state": "Bhopal",
       "status": "awaiting_match"
     },
     {
       "number": 52,
       "name": "Dad***",
       "college": "Aditya Degree College",
-      "state": "Andhra Pradesh",
-      "status": "screening"
+      "state": "Vizianagaram",
+      "status": "rejected"
     },
     {
       "number": 53,
       "name": "Dad***",
       "college": "Centurion University of Technology and Management",
-      "state": "Andhra Pradesh",
-      "status": "screening"
+      "state": "Vizianagaram",
+      "status": "rejected"
     },
     {
       "number": 54,
       "name": "Mon***",
       "college": "Bennett University",
-      "state": "Telangana",
+      "state": "Hyderabad",
       "status": "awaiting_match"
     },
     {
@@ -389,57 +389,57 @@
     {
       "number": 56,
       "name": "Gee***",
-      "college": "Sri Venkateswara College of Engineering, Tirupati",
-      "state": "Andhra Pradesh",
+      "college": "Sri Venkateswara College of Engineering Tirupati",
+      "state": "Tirupati",
       "status": "awaiting_match"
     },
     {
       "number": 57,
       "name": "Mar***",
       "college": "Institute of Aeronautical Engineering",
-      "state": "Telangana",
-      "status": "screening"
+      "state": "Hyderabad",
+      "status": "awaiting_match"
     },
     {
       "number": 58,
       "name": "Swa***",
       "college": "Gandhi Institute for Technology",
-      "state": "Odisha",
-      "status": "screening"
+      "state": "Bhubaneswar",
+      "status": "technical_call"
     },
     {
       "number": 59,
       "name": "J***",
       "college": "Silicon Institute of Technology",
-      "state": "Odisha",
-      "status": "screening"
+      "state": "Bhubaneswar",
+      "status": "rejected"
     },
     {
       "number": 60,
       "name": "Apr***",
       "college": "Institute of Technical Education and Research",
-      "state": "Karnataka",
+      "state": "Bangalore",
       "status": "screening"
     },
     {
       "number": 61,
       "name": "Avv***",
       "college": "Anil Neerukonda Institute of Technology and Sciences",
-      "state": "Andhra Pradesh",
+      "state": "Visakhapatnam",
       "status": "screening"
     },
     {
       "number": 62,
       "name": "Nav***",
       "college": "Periyar Maniammai Institute of Science and Technology",
-      "state": "Tamil Nadu",
-      "status": "screening"
+      "state": "Thanjavur",
+      "status": "rejected"
     },
     {
       "number": 63,
       "name": "Ayy***",
       "college": "CVR College of Engineering",
-      "state": "Telangana",
+      "state": "Hyderabad",
       "status": "screening"
     },
     {
@@ -452,22 +452,225 @@
     {
       "number": 65,
       "name": "Nav***",
-      "college": "Panimalar Engineering College, Chennai City Campus",
-      "state": "Tamil Nadu",
+      "college": "Panimalar Engineering College City Campus",
+      "state": "Chennai",
       "status": "screening"
     },
     {
       "number": 66,
       "name": "Har***",
-      "college": "Gandhi Institute for Technology (GIFT)",
-      "state": "Karnataka",
+      "college": "Gandhi Institute for Technology",
+      "state": "Bangalore",
       "status": "screening"
     },
     {
       "number": 67,
       "name": "SHO***",
       "college": "Dayananda Sagar University",
-      "state": "Karnataka",
+      "state": "Bangalore",
+      "status": "screening"
+    },
+    {
+      "number": 68,
+      "name": "Kum***",
+      "college": "Asansol Engineering College",
+      "state": "Bangalore",
+      "status": "screening"
+    },
+    {
+      "number": 69,
+      "name": "Chi***",
+      "college": "Bharath Institute of Higher Education and Research",
+      "state": "Chennai",
+      "status": "screening"
+    },
+    {
+      "number": 70,
+      "name": "Sak***",
+      "college": "Sona College of Technology",
+      "state": "Rasipuram",
+      "status": "screening"
+    },
+    {
+      "number": 71,
+      "name": "Sov***",
+      "college": "Biju Patnaik University of Technology",
+      "state": "Noida",
+      "status": "screening"
+    },
+    {
+      "number": 72,
+      "name": "Sai***",
+      "college": "JNTU Hyderabad",
+      "state": "Hyderabad",
+      "status": "screening"
+    },
+    {
+      "number": 73,
+      "name": "Jay***",
+      "college": "Vellore Institute of Technology",
+      "state": "Chennai",
+      "status": "screening"
+    },
+    {
+      "number": 74,
+      "name": "Par***",
+      "college": "Chandigarh University",
+      "state": "Chennai",
+      "status": "screening"
+    },
+    {
+      "number": 75,
+      "name": "Lal***",
+      "college": "Silicon University",
+      "state": "Bhubaneswar",
+      "status": "screening"
+    },
+    {
+      "number": 76,
+      "name": "Dhr***",
+      "college": "Presidency University",
+      "state": "Bangalore",
+      "status": "screening"
+    },
+    {
+      "number": 77,
+      "name": "Adi***",
+      "college": "G.H. Raisoni College Nagpur",
+      "state": "Nagpur",
+      "status": "screening"
+    },
+    {
+      "number": 78,
+      "name": "Shi***",
+      "college": "Guru Gobind Singh Indraprastha University",
+      "state": "Delhi",
+      "status": "screening"
+    },
+    {
+      "number": 79,
+      "name": "Ank***",
+      "college": "Quantum University",
+      "state": "Jhansi",
+      "status": "screening"
+    },
+    {
+      "number": 80,
+      "name": "Gay***",
+      "college": "Sai University",
+      "state": "Chennai",
+      "status": "screening"
+    },
+    {
+      "number": 81,
+      "name": "Anj***",
+      "college": "CVR College of Engineering",
+      "state": "Hyderabad",
+      "status": "screening"
+    },
+    {
+      "number": 82,
+      "name": "Sye***",
+      "college": "Asian International University",
+      "state": "Delhi",
+      "status": "screening"
+    },
+    {
+      "number": 83,
+      "name": "Vra***",
+      "college": "Pandit Deendayal Energy University",
+      "state": "Gujarat",
+      "status": "screening"
+    },
+    {
+      "number": 84,
+      "name": "MD***",
+      "college": "Malla Reddy College of Engineering and Technology",
+      "state": "Hyderabad",
+      "status": "screening"
+    },
+    {
+      "number": 85,
+      "name": "bur***",
+      "college": "Chaitanya Bharathi Institute of Technology",
+      "state": "Hyderabad",
+      "status": "screening"
+    },
+    {
+      "number": 86,
+      "name": "Med***",
+      "college": "Vellore Institute of Technology",
+      "state": "Hyderabad",
+      "status": "screening"
+    },
+    {
+      "number": 87,
+      "name": "Adi***",
+      "college": "Fr. Conceicao Rodrigues College of Engineering",
+      "state": "Mumbai",
+      "status": "screening"
+    },
+    {
+      "number": 88,
+      "name": "Roh***",
+      "college": "Bangalore Institute of Technology",
+      "state": "Bangalore",
+      "status": "screening"
+    },
+    {
+      "number": 89,
+      "name": "Pan***",
+      "college": "Mohan Babu University",
+      "state": "Tirupati",
+      "status": "screening"
+    },
+    {
+      "number": 90,
+      "name": "Sou***",
+      "college": "SRM Institute of Science and Technology",
+      "state": "Chennai",
+      "status": "screening"
+    },
+    {
+      "number": 91,
+      "name": "Ree***",
+      "college": "Bennett University",
+      "state": "Delhi NCR",
+      "status": "screening"
+    },
+    {
+      "number": 92,
+      "name": "Kau***",
+      "college": "Apex University",
+      "state": "Jaipur",
+      "status": "screening"
+    },
+    {
+      "number": 93,
+      "name": "Shr***",
+      "college": "Ajay Kumar Garg Engineering College",
+      "state": "Noida",
+      "status": "screening"
+    },
+    {
+      "number": 94,
+      "name": "Pra***",
+      "college": "CMR College of Engineering and Technology",
+      "state": "Delhi",
+      "status": "screening"
+    },
+    {
+      "number": 95,
+      "name": "Nik***",
+      "college": "Shri Ram Institute of Technology",
+      "state": "Chennai",
+      "status": "screening"
+    },
+    {
+      "number": 96,
+      "name": "Ved***",
+      "college": "PVG College of Engineering and Technology",
+      "state": "Pune",
       "status": "screening"
     }
   ]
