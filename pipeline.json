@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-01-26",
+  "lastUpdated": "2026-01-28",
   "candidates": [
     {
       "number": 1,
@@ -321,7 +321,7 @@
       "name": "Vas***",
       "college": "National School of Business",
       "state": "Delhi",
-      "status": "screening"
+      "status": "rejected"
     },
     {
       "number": 47,
@@ -440,28 +440,28 @@
       "name": "Ayy***",
       "college": "CVR College of Engineering",
       "state": "Hyderabad",
-      "status": "screening"
+      "status": "rejected"
     },
     {
       "number": 64,
       "name": "Sag***",
       "college": "Silicon University",
       "state": "Odisha",
-      "status": "screening"
+      "status": "rejected"
     },
     {
       "number": 65,
       "name": "Nav***",
       "college": "Panimalar Engineering College City Campus",
       "state": "Chennai",
-      "status": "screening"
+      "status": "rejected"
     },
     {
       "number": 66,
       "name": "Har***",
       "college": "Gandhi Institute for Technology",
       "state": "Bangalore",
-      "status": "screening"
+      "status": "rejected"
     },
     {
       "number": 67,
@@ -475,35 +475,35 @@
       "name": "Kum***",
       "college": "Asansol Engineering College",
       "state": "Bangalore",
-      "status": "screening"
+      "status": "rejected"
     },
     {
       "number": 69,
       "name": "Chi***",
       "college": "Bharath Institute of Higher Education and Research",
       "state": "Chennai",
-      "status": "screening"
+      "status": "rejected"
     },
     {
       "number": 70,
       "name": "Sak***",
       "college": "Sona College of Technology",
       "state": "Rasipuram",
-      "status": "screening"
+      "status": "rejected"
     },
     {
       "number": 71,
       "name": "Sov***",
       "college": "Biju Patnaik University of Technology",
       "state": "Noida",
-      "status": "screening"
+      "status": "rejected"
     },
     {
       "number": 72,
       "name": "Sai***",
       "college": "JNTU Hyderabad",
       "state": "Hyderabad",
-      "status": "screening"
+      "status": "rejected"
     },
     {
       "number": 73,
@@ -524,7 +524,7 @@
       "name": "Lal***",
       "college": "Silicon University",
       "state": "Bhubaneswar",
-      "status": "screening"
+      "status": "rejected"
     },
     {
       "number": 76,
@@ -538,21 +538,21 @@
       "name": "Adi***",
       "college": "G.H. Raisoni College Nagpur",
       "state": "Nagpur",
-      "status": "screening"
+      "status": "rejected"
     },
     {
       "number": 78,
       "name": "Shi***",
       "college": "Guru Gobind Singh Indraprastha University",
       "state": "Delhi",
-      "status": "screening"
+      "status": "rejected"
     },
     {
       "number": 79,
       "name": "Ank***",
       "college": "Quantum University",
       "state": "Jhansi",
-      "status": "screening"
+      "status": "rejected"
     },
     {
       "number": 80,
@@ -615,7 +615,7 @@
       "name": "Roh***",
       "college": "Bangalore Institute of Technology",
       "state": "Bangalore",
-      "status": "screening"
+      "status": "rejected"
     },
     {
       "number": 89,
@@ -629,14 +629,14 @@
       "name": "Sou***",
       "college": "SRM Institute of Science and Technology",
       "state": "Chennai",
-      "status": "screening"
+      "status": "rejected"
     },
     {
       "number": 91,
       "name": "Ree***",
       "college": "Bennett University",
       "state": "Delhi NCR",
-      "status": "screening"
+      "status": "rejected"
     },
     {
       "number": 92,
@@ -650,7 +650,7 @@
       "name": "Shr***",
       "college": "Ajay Kumar Garg Engineering College",
       "state": "Noida",
-      "status": "screening"
+      "status": "rejected"
     },
     {
       "number": 94,
@@ -664,14 +664,14 @@
       "name": "Nik***",
       "college": "Shri Ram Institute of Technology",
       "state": "Chennai",
-      "status": "screening"
+      "status": "rejected"
     },
     {
       "number": 96,
       "name": "Ved***",
       "college": "PVG College of Engineering and Technology",
       "state": "Pune",
-      "status": "screening"
+      "status": "rejected"
     }
   ]
 }
