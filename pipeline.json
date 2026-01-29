@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-01-28",
+  "lastUpdated": "2026-01-29",
   "candidates": [
     {
       "number": 1,
@@ -13,7 +13,7 @@
       "name": "Abd***",
       "college": "C. Abdul Hakeem College",
       "state": "Vellore",
-      "status": "rejected"
+      "status": "screening"
     },
     {
       "number": 3,
@@ -34,14 +34,14 @@
       "name": "Tan***",
       "college": "Government College of Engineering Jalgaon",
       "state": "Nagpur",
-      "status": "technical_call"
+      "status": "rejected"
     },
     {
       "number": 6,
       "name": "Vai***",
       "college": "Ujjain Engineering College",
       "state": "Ujjain",
-      "status": "rejected"
+      "status": "screening"
     },
     {
       "number": 7,
@@ -139,7 +139,7 @@
       "name": "Aks***",
       "college": "Akshai Asok",
       "state": "Kerala",
-      "status": "rejected"
+      "status": "screening"
     },
     {
       "number": 21,
@@ -237,7 +237,7 @@
       "name": "Pra***",
       "college": "SRM Institute of Science and Technology",
       "state": "Chennai",
-      "status": "rejected"
+      "status": "screening"
     },
     {
       "number": 35,
@@ -356,7 +356,7 @@
       "name": "Sak***",
       "college": "Vellore Institute of Technology",
       "state": "Bhopal",
-      "status": "awaiting_match"
+      "status": "screening"
     },
     {
       "number": 52,
@@ -405,7 +405,7 @@
       "name": "Swa***",
       "college": "Gandhi Institute for Technology",
       "state": "Bhubaneswar",
-      "status": "technical_call"
+      "status": "screening"
     },
     {
       "number": 59,
@@ -454,7 +454,7 @@
       "name": "Nav***",
       "college": "Panimalar Engineering College City Campus",
       "state": "Chennai",
-      "status": "rejected"
+      "status": "screening"
     },
     {
       "number": 66,
@@ -474,8 +474,8 @@
       "number": 68,
       "name": "Kum***",
       "college": "Asansol Engineering College",
-      "state": "Bangalore",
-      "status": "rejected"
+      "state": "Bengaluru",
+      "status": "screening"
     },
     {
       "number": 69,
@@ -672,6 +672,69 @@
       "college": "PVG College of Engineering and Technology",
       "state": "Pune",
       "status": "rejected"
+    },
+    {
+      "number": 97,
+      "name": "Lok***",
+      "college": "LENDI INSTITUTE OF ENGINEERING AND TECHNOLOGY",
+      "state": "Hyderabad",
+      "status": "screening"
+    },
+    {
+      "number": 98,
+      "name": "Vik***",
+      "college": "KG College of Arts and Science",
+      "state": "Coimbatore",
+      "status": "screening"
+    },
+    {
+      "number": 99,
+      "name": "Ven***",
+      "college": "Rao Bahadur Y. Mahabaleswarappa Engineering College",
+      "state": "Karnataka",
+      "status": "screening"
+    },
+    {
+      "number": 100,
+      "name": "Jee***",
+      "college": "Muthayammal Engineering College",
+      "state": "Hosur",
+      "status": "screening"
+    },
+    {
+      "number": 101,
+      "name": "Mad***",
+      "college": "Loyola-Icam College of Engineering and Technology",
+      "state": "Chennai",
+      "status": "screening"
+    },
+    {
+      "number": 102,
+      "name": "Mad***",
+      "college": "MVGR College of Engineering",
+      "state": "Visakhapatnam",
+      "status": "screening"
+    },
+    {
+      "number": 103,
+      "name": "Sub***",
+      "college": "Vellore Institute of Technology, Chennai",
+      "state": "Tirunelveli",
+      "status": "screening"
+    },
+    {
+      "number": 104,
+      "name": "C.D***",
+      "college": "Crescent University",
+      "state": "Chennai",
+      "status": "screening"
+    },
+    {
+      "number": 105,
+      "name": "Aha***",
+      "college": "Dhaanish Ahmed College of Engineering",
+      "state": "Chennai",
+      "status": "screening"
     }
   ]
 }
